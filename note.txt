@@ -1,0 +1,5 @@
+* hiệu ứng animate on scroll trong reactjs:
+    b1: cài đặt npm install aos --save
+    b2: import 'aos/dist/aos.css';
+        import AOS from 'aos';
+    b3: AOS.init();
