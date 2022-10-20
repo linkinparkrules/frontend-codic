@@ -1,7 +1,7 @@
 import './Login.css'
 import logInImg from "../../Asset/Background/log in img.jpg";
 import logInImg2 from "../../Asset/Background/log in img2.jpg";
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useState } from 'react';
@@ -9,16 +9,23 @@ import http from '../../Utils/Axios.js';
 
 const Login = () => {
     AOS.init();
+    const navigate = useNavigate();
     const [values, setValues] = useState({
         username: "",
         password: "",
         rememberMe: false
     });
+    const [loginErr, setLoginErr] = useState("")
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const response = await http.post('login', values);
-        console.log(response)
+        try {
+            const response = await http.post('login', values);
+            // console.log(response)
+            navigate('/home');
+        } catch (err) {
+            setLoginErr(err.response.data);
+        }
     };
 
     const handleValueChange = (event) => {
@@ -48,6 +55,7 @@ const Login = () => {
             <div className="content">
                 <div className="form" id="login">
                     <h2>Đăng Nhập</h2>
+                    <div className="password-messenger" >{loginErr}</div>
                     <form action="" onSubmit={handleSubmit}>
                         <LoginForm className="input-form" messenge="Tên Người Dùng" type="text"
                             name="username" value={values.username} event={handleValueChange} />
@@ -59,7 +67,6 @@ const Login = () => {
                         <div className="input-form">
                             <p>Bạn Chưa Có Tài Khoản? <Link to="/signup">Đăng Ký</Link></p>
                         </div>
-                        {/* <div id="password-messenger"></div> */}
                     </form>
                     <h3>Đăng Nhập Bằng Mạng Xã Hội</h3>
                     <ul className="channel-icon">
