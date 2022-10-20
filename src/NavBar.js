@@ -19,8 +19,8 @@ const NavBar = () => {
                 <MenuItem link="/introduction" linkName="Giới thiệu" />
                 <MenuItem link="/exercise" linkName="Học tập" />
                 <MenuItem link="/contact" linkName="Liên hệ" />
-                <MenuItem link="/log-in" linkName="Đăng nhập" />
-                <MenuItem link="/sign-up" linkName="Đăng ký" />
+                <MenuItem link="/login" linkName="Đăng nhập" />
+                <MenuItem link="/signup" linkName="Đăng ký" />
             </div>
             <hr />
         </div>

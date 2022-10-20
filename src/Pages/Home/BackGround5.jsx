@@ -76,7 +76,7 @@ const BackGround5 = () => {
             </div>
             <Buttons className="btn-white" dataAos="fade-up" dataAosDuration="2000" to="/introduction">
                 Tìm hiểu ngay
-                {/* <i className="fa-solid fa-angles-right"></i> */}
+                <i className="fa-solid fa-angles-right"></i>
             </Buttons>
         </div>
     );

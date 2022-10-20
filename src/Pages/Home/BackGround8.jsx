@@ -1,5 +1,4 @@
 import './BackGround.css';
-import { Images} from './Components';
 import { Link } from 'react-router-dom';
 import footerimg1 from "../../Asset/Background/footerimg1.jpg"
 import footerimg2 from "../../Asset/Background/footerimg2.jpg"
@@ -12,9 +11,9 @@ const BackGround8 = () => {
             <div className="collect-feedback">
                 <p>Đóng góp ý kiến</p>
                 <form id="contact" className="enter-feedback">
-                    <label for="email">Email của bạn:</label><br />
+                    <label>Email của bạn:</label><br />
                     <input type="email" id="email" name="email" placeholder="SamSmith@gmail.com" /><br />
-                    <label for="feedback">Góp ý:</label><br />
+                    <label>Góp ý:</label><br />
                     <input type="text" id="feedBack" name="feedBack" placeholder="Nhập ý kiến của bạn" /><br />
                     <input type="submit" value="Gửi" />
                 </form>
