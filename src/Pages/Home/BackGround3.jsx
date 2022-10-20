@@ -39,7 +39,7 @@ const BackGround3 = () => {
             </div>
             <Buttons className="btn-white" dataAos="fade-up" dataAosDuration="1000">
                     Học ngay
-                    {/* <i className="fa-solid fa-angles-right"></i> */}
+                    <i className="fa-solid fa-angles-right"></i>
             </Buttons>
         </div>
     );

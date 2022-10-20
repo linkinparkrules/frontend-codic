@@ -17,7 +17,7 @@ const BackGround1 = () => {
                     <p data-aos="fade-up" data-aos-duration="2000">
                         Rèn luyện Tiếng Anh chuyên ngành IT hàng ngày với Codic <br /> Nâng cao khả năng lập trình</p>
                     <Buttons className="btn-white" dataAos="fade-up" dataAosDuration="2000" to="/exercise">
-                        Học ngay{/* <i className="fa-solid fa-angles-right"></i> */}
+                        Học ngay<i className="fa-solid fa-angles-right"></i>
                     </Buttons>
                 </div>
                 <div className="slogan-image">
