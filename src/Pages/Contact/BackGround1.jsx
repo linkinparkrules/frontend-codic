@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 
 const BackGround1 = () => {
     return (
-        <div className="contact">
+        <div className="contact1">
             <h1 className="heading1">Liên hệ với chúng tôi</h1>
             <div className="contact-content">
                 <div className="direct-contact">

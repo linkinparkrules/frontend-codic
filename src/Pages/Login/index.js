@@ -6,10 +6,13 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useState } from 'react';
 import http from '../../Utils/Axios.js';
+import {useContext} from 'react';
+import UserContext from '../../Context';
 
 const Login = () => {
     AOS.init();
     const navigate = useNavigate();
+    const userCtx = useContext(UserContext);
     const [values, setValues] = useState({
         username: "",
         password: "",
@@ -21,7 +24,9 @@ const Login = () => {
         event.preventDefault();
         try {
             const response = await http.post('login', values);
-            // console.log(response)
+            // console.log(response);
+            localStorage.setItem("jwt", response.data.token);
+            userCtx.setUser(response.data);
             navigate('/home');
         } catch (err) {
             setLoginErr(err.response.data);
