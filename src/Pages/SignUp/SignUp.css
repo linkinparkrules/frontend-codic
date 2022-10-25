@@ -1,0 +1,213 @@
+@media only screen and (min-width: 1024px){
+    body {
+        height: 100vh;
+    }
+    
+    .content {
+        background-image: url(../../Asset/Background/sign\ up\ bgr.jpg);
+        background-size: cover;
+        /* height: 100%; */
+        z-index: 0;
+        position: relative;
+    }
+    
+    #password-messenger {
+        color: red;
+    }
+    
+    .sign-up-img {
+        position: absolute;
+        left: 100px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    
+    .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 50px;
+        background-color: rgba(255, 255, 255, 0.589);
+        border-radius: 18px;
+        height: 90%;
+        width: 60%;
+    }
+    
+    .content>img {
+        width: 230px;
+        border-radius: 18px;
+        z-index: 1;
+    }
+    
+    .top-img {
+        position: absolute;
+        left: 120px;
+        top: 10px;
+    }
+    
+    .bottom-img {
+        position: absolute;
+        bottom: 50px;
+        right: 120px;
+    }
+    
+    .form>h2 {
+        color: #607d8b;
+        font-weight: 500;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        border-bottom: 4px solid orangered;
+        display: inline-block;
+        letter-spacing: 1px;
+    }
+    
+    .input-form {
+        margin-bottom: 20px;
+    }
+    
+    .input-form>p {
+        font-size: 16px;
+        margin-bottom: 5px;
+        color: #607db8;
+        letter-spacing: 1px;
+    }
+    
+    .input-form>input {
+        width: 100%;
+        padding: 10px 20px;
+        outline: none;
+        border: 1px solid #607d8b;
+        font-size: 16px;
+        letter-spacing: 1px;
+        color: #607d8b;
+        background: transparent;
+        border-radius: 30px;
+    }
+    
+    .input-form>input[type="submit"] {
+        background: rgb(255, 121, 44);
+        color: black;
+        outline: none;
+        border: none;
+        font-weight: 500;
+        cursor: pointer;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12),
+            0 2px 2px rgba(0, 0, 0, 0.12),
+            0 4px 4px rgba(0, 0, 0, 0.12),
+            0 8px 8px rgba(0, 0, 0, 0.12),
+            0 16px 16px rgba(0, 0, 0, 0.12);
+    }
+    
+    .input-form>input[type="submit"]:hover {
+        background: orangered;
+        color: white;
+    }
+    
+    .remember-info {
+        margin-bottom: 10px;
+        color: #607d8b;
+        font-size: 14px;
+    }
+}
+
+
+@media only screen and (max-width: 1024px){
+    .content>img {
+        display: none;
+    }
+    
+    .content {
+        background-image: url(../../Asset/Background/sign\ up\ bgr.jpg);
+        background-size: cover;
+        height: 100vh;
+        z-index: 0;
+        position: relative;
+    }
+
+    .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 50px;
+        background-color: rgba(255, 255, 255, 0.589);
+        border-radius: 18px;
+        height: fit-content;
+        width: fit-content;
+    }
+    .form>h2 {
+        color: #607d8b;
+        font-weight: 500;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        border-bottom: 4px solid orangered;
+        display: inline-block;
+        letter-spacing: 1px;
+    }
+    
+    .input-form {
+        margin-bottom: 20px;
+    }
+    
+    .input-form>p {
+        font-size: 16px;
+        margin-bottom: 5px;
+        color: #607db8;
+        letter-spacing: 1px;
+    }
+    
+    .input-form>input {
+        width: 100%;
+        padding: 10px 20px;
+        outline: none;
+        border: 1px solid #607d8b;
+        font-size: 16px;
+        letter-spacing: 1px;
+        color: #607d8b;
+        background: transparent;
+        border-radius: 30px;
+    }
+    
+    .input-form>input[type="submit"] {
+        background: rgb(255, 121, 44);
+        color: black;
+        outline: none;
+        border: none;
+        font-weight: 500;
+        cursor: pointer;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12),
+            0 2px 2px rgba(0, 0, 0, 0.12),
+            0 4px 4px rgba(0, 0, 0, 0.12),
+            0 8px 8px rgba(0, 0, 0, 0.12),
+            0 16px 16px rgba(0, 0, 0, 0.12);
+    }
+    
+    .input-form>input[type="submit"]:hover {
+        background: orangered;
+        color: white;
+    }
+    
+    .remember-info {
+        margin-bottom: 10px;
+        color: #607d8b;
+        font-size: 14px;
+    }
+}

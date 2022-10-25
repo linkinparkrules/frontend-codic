@@ -4,6 +4,7 @@ import NavBar from './NavBar';
 import Home from './Pages/Home';
 import Introduction from './Pages/Introduction';
 import Login from './Pages/Login';
+import SignUp from './Pages/SignUp';
 import Exercise from './Pages/Exercise';
 import Contact from './Pages/Contact';
 import NotFound from './NotFound';
@@ -25,6 +26,7 @@ function App() {
           <Route path='/exercise' element={<Exercise />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<SignUp />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </UserContext.Provider>
