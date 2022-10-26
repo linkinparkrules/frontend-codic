@@ -1,12 +1,12 @@
 @media only screen and (min-width: 1024px){
-    body {
+    /* body {
         height: 100vh;
-    }
+    } */
     
-    .content {
+    .signup-content {
         background-image: url(../../Asset/Background/sign\ up\ bgr.jpg);
         background-size: cover;
-        /* height: 100%; */
+        height: 89vh;
         z-index: 0;
         position: relative;
     }
@@ -23,14 +23,14 @@
         align-items: center;
     }
     
-    .form-container {
+    .signup-form-container {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: 100%;
     }
     
-    .form {
+    .signup-form {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -42,25 +42,25 @@
         width: 60%;
     }
     
-    .content>img {
+    .signup-content>img {
         width: 230px;
         border-radius: 18px;
         z-index: 1;
     }
     
-    .top-img {
+    .signup-top-img {
         position: absolute;
         left: 120px;
         top: 10px;
     }
     
-    .bottom-img {
+    .signup-bottom-img {
         position: absolute;
         bottom: 50px;
         right: 120px;
     }
     
-    .form>h2 {
+    .signup-form>h2 {
         color: #607d8b;
         font-weight: 500;
         font-size: 1.5em;
@@ -71,18 +71,18 @@
         letter-spacing: 1px;
     }
     
-    .input-form {
+    .signup-input-form {
         margin-bottom: 20px;
     }
     
-    .input-form>p {
+    .signup-input-form>p {
         font-size: 16px;
         margin-bottom: 5px;
         color: #607db8;
         letter-spacing: 1px;
     }
     
-    .input-form>input {
+    .signup-input-form>input {
         width: 100%;
         padding: 10px 20px;
         outline: none;
@@ -94,7 +94,7 @@
         border-radius: 30px;
     }
     
-    .input-form>input[type="submit"] {
+    .signup-input-form>input[type="submit"] {
         background: rgb(255, 121, 44);
         color: black;
         outline: none;
@@ -108,12 +108,12 @@
             0 16px 16px rgba(0, 0, 0, 0.12);
     }
     
-    .input-form>input[type="submit"]:hover {
+    .signup-input-form>input[type="submit"]:hover {
         background: orangered;
         color: white;
     }
     
-    .remember-info {
+    .signup-remember-info {
         margin-bottom: 10px;
         color: #607d8b;
         font-size: 14px;
@@ -122,11 +122,11 @@
 
 
 @media only screen and (max-width: 1024px){
-    .content>img {
+    .signup-content>img {
         display: none;
     }
     
-    .content {
+    .signup-content {
         background-image: url(../../Asset/Background/sign\ up\ bgr.jpg);
         background-size: cover;
         height: 100vh;
@@ -134,14 +134,14 @@
         position: relative;
     }
 
-    .form-container {
+    .signup-form-container {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
     }
     
-    .form {
+    .signup-form {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -152,7 +152,7 @@
         height: fit-content;
         width: fit-content;
     }
-    .form>h2 {
+    .signup-form>h2 {
         color: #607d8b;
         font-weight: 500;
         font-size: 1.5em;
@@ -163,18 +163,18 @@
         letter-spacing: 1px;
     }
     
-    .input-form {
+    .signup-input-form {
         margin-bottom: 20px;
     }
     
-    .input-form>p {
+    .signup-input-form>p {
         font-size: 16px;
         margin-bottom: 5px;
         color: #607db8;
         letter-spacing: 1px;
     }
     
-    .input-form>input {
+    .signup-input-form>input {
         width: 100%;
         padding: 10px 20px;
         outline: none;
@@ -186,7 +186,7 @@
         border-radius: 30px;
     }
     
-    .input-form>input[type="submit"] {
+    .signup-input-form>input[type="submit"] {
         background: rgb(255, 121, 44);
         color: black;
         outline: none;
@@ -200,12 +200,12 @@
             0 16px 16px rgba(0, 0, 0, 0.12);
     }
     
-    .input-form>input[type="submit"]:hover {
+    .signup-input-form>input[type="submit"]:hover {
         background: orangered;
         color: white;
     }
     
-    .remember-info {
+    .signup-remember-info {
         margin-bottom: 10px;
         color: #607d8b;
         font-size: 14px;

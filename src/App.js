@@ -11,8 +11,11 @@ import NotFound from './NotFound';
 import BackToTop from './BackToTop'
 import UserContext from './Context';
 import { useState } from 'react';
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 
 function App() {
+  AOS.init();
   const [user, setUser] = useState(null);
   return (
     <div className="App">

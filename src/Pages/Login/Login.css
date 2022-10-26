@@ -5,23 +5,19 @@
     font-family: Montserrat Reg;
 }
 
-body {
-    background-image: url(../../Asset/Background/log\ in\ bgr.jpg);
-    background-size: cover;
-    height: 100vh;
-}
-
 @media only screen and (min-width: 1024px){
     
-section {
+.log-in {
+    background-image: url(../../Asset/Background/log\ in\ bgr.jpg);
+    background-size: cover;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 89vh;
 }
 
-.password-messenger {
+.login-password-messenger {
     color: red;
 }
 
@@ -47,7 +43,7 @@ section {
     border-radius: 18px;
 }
 
-.content {
+.login-content {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,7 +53,7 @@ section {
     border-radius: 18px;
 }
 
-.form {
+.login-form {
     padding: 20px;
     width: 50%;
     display: flex;
@@ -66,7 +62,7 @@ section {
     align-items: center;
 }
 
-.form>h2 {
+.login-form>h2 {
     color: #607d8b;
     font-weight: 500;
     font-size: 1.5em;
@@ -76,11 +72,11 @@ section {
     letter-spacing: 1px;
 }
 
-.input-form {
+.login-input-form {
     margin-bottom: 20px;
 }
 
-.input-form label {
+.login-input-form label {
     font-size: 16px;
     margin-bottom: 5px;
     display: inline-block;
@@ -89,7 +85,7 @@ section {
 
 }
 
-.input-form input {
+.login-input-form input {
     width: 100%;
     padding: 10px 20px;
     outline: none;
@@ -102,7 +98,7 @@ section {
 
 }
 
-.input-form input[type="submit"] {
+.login-input-form input[type="submit"] {
     background: rgb(255, 121, 44);
     color: black;
     outline: none;
@@ -116,12 +112,12 @@ section {
         0 16px 16px rgba(0, 0, 0, 0.12);
 }
 
-.input-form input[type="submit"]:hover {
+.login-input-form input[type="submit"]:hover {
     background: orangered;
     color: white;
 }
 
-.remember-info {
+.login-remember-info {
     display: flex;
     flex-direction: row-reverse;
     justify-content: left;
@@ -130,28 +126,28 @@ section {
     font-size: 14px;
 }
 
-.input-form>p {
+.login-input-form>p {
     color: #607d8b;
 }
 
-.input-form>p>a {
+.login-input-form>p>a {
     color: orangered;
 }
 
-.form>h3 {
+.login-form>h3 {
     color: #607d8b;
     text-align: center;
     margin: 50px 0 10px;
     font-weight: 500;
 }
 
-.channel-icon {
+.login-channel-icon {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.channel-icon>li {
+.login-channel-icon>li {
     list-style: none;
     cursor: pointer;
     width: 50px;
@@ -161,15 +157,15 @@ section {
     align-items: center;
 }
 
-.channel-icon>li:nth-child(1) {
+.login-channel-icon>li:nth-child(1) {
     color: #3b5999;
 }
 
-.channel-icon>li:nth-child(2) {
+.login-channel-icon>li:nth-child(2) {
     color: #dd4b39;
 }
 
-.channel-icon>li>i {
+.login-channel-icon>li>i {
     font-size: 30px;
 }
 }
@@ -186,10 +182,10 @@ section {
         right: 50px;
         width: 150px;
     }
-    section > img{
+    .log-in > img{
         display: none;
     }
-    .content {
+    .login-content {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -198,7 +194,7 @@ section {
         background-color: rgba(255, 255, 255, 0.521);
         border-radius: 18px;
     }
-    .form {
+    .login-form {
         padding: 20px;
         width: 50%;
         display: flex;
@@ -207,7 +203,7 @@ section {
         align-items: center;
     }
     
-    .form>h2 {
+    .login-form>h2 {
         color: #607d8b;
         font-weight: 500;
         font-size: 1.5em;
@@ -217,11 +213,11 @@ section {
         letter-spacing: 1px;
     }
     
-    .input-form {
+    .login-input-form {
         margin-bottom: 20px;
     }
     
-    .input-form span {
+    .login-input-form span {
         font-size: 16px;
         margin-bottom: 5px;
         display: inline-block;
@@ -230,7 +226,7 @@ section {
     
     }
     
-    .input-form input {
+    .login-input-form input {
         width: 100%;
         padding: 10px 20px;
         outline: none;
@@ -243,7 +239,7 @@ section {
     
     }
     
-    .input-form input[type="submit"] {
+    .login-input-form input[type="submit"] {
         background: rgb(255, 121, 44);
         color: black;
         outline: none;
@@ -257,39 +253,39 @@ section {
             0 16px 16px rgba(0, 0, 0, 0.12);
     }
     
-    .input-form input[type="submit"]:hover {
+    .login-input-form input[type="submit"]:hover {
         background: orangered;
         color: white;
     }
     
-    .remember-info {
+    .login-remember-info {
         margin-bottom: 10px;
         color: #607d8b;
         font-size: 14px;
     }
     
-    .input-form>p {
+    .login-input-form>p {
         color: #607d8b;
     }
     
-    .input-form>p>a {
+    .login-input-form>p>a {
         color: orangered;
     }
     
-    .form>h3 {
+    .login-form>h3 {
         color: #607d8b;
         text-align: center;
         margin: 50px 0 10px;
         font-weight: 500;
     }
     
-    .channel-icon {
+    .login-channel-icon {
         display: flex;
         justify-content: center;
         align-items: center;
     }
     
-    .channel-icon>li {
+    .login-channel-icon>li {
         list-style: none;
         cursor: pointer;
         width: 50px;
@@ -299,21 +295,23 @@ section {
         align-items: center;
     }
     
-    .channel-icon>li:nth-child(1) {
+    .login-channel-icon>li:nth-child(1) {
         color: #3b5999;
     }
     
-    .channel-icon>li:nth-child(2) {
+    .login-channel-icon>li:nth-child(2) {
         color: #dd4b39;
     }
     
-    .channel-icon>li>i {
+    .login-channel-icon>li>i {
         font-size: 30px;
     }
 }
 
 @media only screen and (max-width: 768px){
-    section {
+    .log-in {
+        background-image: url(../../Asset/Background/log\ in\ bgr.jpg);
+        background-size: cover;
         position: relative;
         display: flex;
         justify-content: center;
@@ -332,10 +330,10 @@ section {
         width: 80px;
     } */
      
-    section > img{
+    .log-in > img{
         display: none;
     }
-    .content {
+    .login-content {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -344,7 +342,7 @@ section {
         background-color: rgba(255, 255, 255, 0.521);
         border-radius: 18px;
     }
-    .form {
+    .login-form {
         padding: 20px;
         width: 50%;
         display: flex;
@@ -353,7 +351,7 @@ section {
         align-items: center;
     }
     
-    .form>h2 {
+    .login-form>h2 {
         color: #607d8b;
         font-weight: 500;
         font-size: 1.5em;
@@ -363,11 +361,11 @@ section {
         letter-spacing: 1px;
     }
     
-    .input-form {
+    .login-input-form {
         margin-bottom: 20px;
     }
     
-    .input-form span {
+    .login-input-form span {
         font-size: 16px;
         margin-bottom: 5px;
         display: inline-block;
@@ -376,7 +374,7 @@ section {
     
     }
     
-    .input-form input {
+    .login-input-form input {
         width: 100%;
         padding: 10px 20px;
         outline: none;
@@ -389,7 +387,7 @@ section {
     
     }
     
-    .input-form input[type="submit"] {
+    .login-input-form input[type="submit"] {
         background: rgb(255, 121, 44);
         color: black;
         outline: none;
@@ -403,39 +401,39 @@ section {
             0 16px 16px rgba(0, 0, 0, 0.12);
     }
     
-    .input-form input[type="submit"]:hover {
+    .login-input-form input[type="submit"]:hover {
         background: orangered;
         color: white;
     }
     
-    .remember-info {
+    .login-remember-info {
         margin-bottom: 10px;
         color: #607d8b;
         font-size: 14px;
     }
     
-    .input-form>p {
+    .login-input-form>p {
         color: #607d8b;
     }
     
-    .input-form>p>a {
+    .login-input-form>p>a {
         color: orangered;
     }
     
-    .form>h3 {
+    .login-form>h3 {
         color: #607d8b;
         text-align: center;
         margin: 50px 0 10px;
         font-weight: 500;
     }
     
-    .channel-icon {
+    .login-channel-icon {
         display: flex;
         justify-content: center;
         align-items: center;
     }
     
-    .channel-icon>li {
+    .login-channel-icon>li {
         list-style: none;
         cursor: pointer;
         width: 50px;
@@ -445,15 +443,15 @@ section {
         align-items: center;
     }
     
-    .channel-icon>li:nth-child(1) {
+    .login-channel-icon>li:nth-child(1) {
         color: #3b5999;
     }
     
-    .channel-icon>li:nth-child(2) {
+    .login-channel-icon>li:nth-child(2) {
         color: #dd4b39;
     }
     
-    .channel-icon>li>i {
+    .login-channel-icon>li>i {
         font-size: 30px;
     }
 }
