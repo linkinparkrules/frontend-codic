@@ -31,12 +31,16 @@ const SignUp = () => {
             setErrPW("Both passwords must be the same!");
             return;
         }
-        await http.post('signup', {
-            username: user.username,
-            email: user.email,
-            password: user.password
-        });
-        navigate('/login');
+        try {
+            await http.post('signup', {
+                username: user.username,
+                email: user.email,
+                password: user.password
+            });
+            navigate('/login');
+        } catch (err) {
+            setErrPW(err.response.data);
+        }
     };
 
 
