@@ -23,8 +23,8 @@ const BackGround8 = () => {
                 <Link to="/introduction">Giới thiệu</Link>
                 <Link to="/exercise">Học tập</Link>
                 <Link to="/contact">Liên hệ</Link>
-                <Link to="/log in">Đăng nhập</Link>
-                <Link to="/sign up">Đăng ký</Link>
+                <Link to="/login">Đăng nhập</Link>
+                <Link to="/signup">Đăng ký</Link>
             </div>
             <div className="footer-img">
                 <img src={footerimg1} alt="Người thành công" />
@@ -32,7 +32,7 @@ const BackGround8 = () => {
                 <img src={footerimg3} alt="Người thành công" />
                 <img src={footerimg4} alt="Người thành công" />
             </div>
-            <div className="contact">
+            <div className="contact-footer">
                 <p>Contact us</p>
                 <div className="channel">
                     <Link to="https://www.facebook.com/Linkinllica/" target="_blank"><i

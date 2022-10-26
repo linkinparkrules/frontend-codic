@@ -19,6 +19,7 @@ function App() {
         <Route path='/home' element={<Home />} />
         <Route path='/introduction' element={<Introduction />} />
         <Route path='/exercise' element={<Exercise />} />
+        {/* <Route path='/dictionary' element={<Dictionary />} /> */}
         <Route path='/contact' element={<Contact />} />
         <Route path='/login' element={<Login />} />
         <Route path="*" element={<NotFound />} />
