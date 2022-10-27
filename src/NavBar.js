@@ -31,17 +31,21 @@ const NavBar = () => {
                 <MenuItem link="/introduction" linkName="Giới thiệu" />
                 <MenuItem link="/exercise" linkName="Học tập" />
                 <MenuItem link="/contact" linkName="Liên hệ" />
+                <MenuItem link="/signup" linkName="Đăng ký" />
                 {loginCtx.user ? 
                     <div style={{color: `#${randomColor2}`, textAlign: "center"}}>Welcome, <br />
                         <div style={{textTransform: "uppercase", color: `#${randomColor}`}}>{loginCtx.user.username}</div>
                     </div> 
                     : <MenuItem link="/login" linkName="Đăng nhập" />
                 }
+<<<<<<< HEAD
+=======
                 {loginCtx.user ? 
                     <Link to="/" onClick={handleLogout}>Đăng xuất</Link> 
                     : <MenuItem link="/signup" linkName="Đăng ký" />
                 }
                 
+>>>>>>> 4307afda33b8bc120c1c5de0214dc8520cf78340
             </div>
             <hr />
         </div>

@@ -6,6 +6,8 @@ import Introduction from './Pages/Introduction';
 import Login from './Pages/Login';
 import SignUp from './Pages/SignUp';
 import Exercise from './Pages/Exercise';
+import Dictionary from './Pages/Dictionary';
+import Element from './Pages/Element';
 import Contact from './Pages/Contact';
 import NotFound from './NotFound';
 import BackToTop from './BackToTop'
@@ -49,6 +51,8 @@ function App() {
           <Route path='/home' element={<Home />} />
           <Route path='/introduction' element={<Introduction />} />
           <Route path='/exercise' element={<Exercise />} />
+          <Route path='/exercise/dictionary' element={<Dictionary />} />
+          <Route path='/exercise/element' element={<Element />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
