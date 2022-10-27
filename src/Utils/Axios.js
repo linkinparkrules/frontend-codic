@@ -7,8 +7,6 @@ const http = axios.create({
 // this code runs before you send request to baseURL
 // if localStorage has token, add that token to headers.authorization
 http.interceptors.request.use((config) => {
-    // send the base URL address to backend
-    config.headers.origin = window.location.origin;
     if(localStorage.getItem("jwt")) {
         config.headers.authorization = localStorage.getItem("jwt");
     } else if (sessionStorage.getItem("jwt")) {
