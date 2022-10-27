@@ -21,7 +21,7 @@ const Login = () => {
         event.preventDefault();
         try {
             const response = await http.post('login', values);
-            console.log(response);
+            // console.log(response);
             if (values.rememberMe === true) {
                 localStorage.setItem("jwt", response.data.token);
             } else {
