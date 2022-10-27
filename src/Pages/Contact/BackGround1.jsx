@@ -11,9 +11,9 @@ const BackGround1 = () => {
                 <div className="direct-contact">
                     <h2>Nhắn tin trực tiếp</h2>
                     <form id="contact" className="enter-feedback">
-                        <label for="email">Email của bạn:</label><br />
+                        <label>Email của bạn:</label><br />
                         <input type="email" name="email" id="email" placeholder="SamSmith@gmail.com" /><br />
-                        <label for="feedback">Lời nhắn:</label><br />
+                        <label>Lời nhắn:</label><br />
                         <input type="text" name="feedBack" id="feedBack" placeholder="Nhập tin nhắn" /><br />
                         <input type="submit" value="Gửi" />
                     </form>
