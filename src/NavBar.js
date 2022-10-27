@@ -9,6 +9,13 @@ const navBarClassName = (navBarStatus) => {
 
 const NavBar = () => {
     const loginCtx = useContext(UserContext);
+
+    const handleLogout = () => {
+        loginCtx.setUser(null);
+        localStorage.removeItem('jwt');
+        sessionStorage.removeItem('jwt');
+    }
+
     return (
         <div className="navi-bar">
             <div className="logo">
@@ -23,10 +30,14 @@ const NavBar = () => {
                 <MenuItem link="/exercise" linkName="Học tập" />
                 <MenuItem link="/contact" linkName="Liên hệ" />
                 {loginCtx.user ? 
-                    <MenuItem link={null} linkName={"Welcome " + loginCtx.user.username} /> 
+                    <div style={{color: "orange"}}>{"Welcome, " + loginCtx.user.username}</div> 
                     : <MenuItem link="/login" linkName="Đăng nhập" />
                 }
-                <MenuItem link="/signup" linkName="Đăng ký" />
+                {loginCtx.user ? 
+                    <Link to="/" onClick={handleLogout}>Đăng xuất</Link> 
+                    : <MenuItem link="/signup" linkName="Đăng ký" />
+                }
+                
             </div>
             <hr />
         </div>

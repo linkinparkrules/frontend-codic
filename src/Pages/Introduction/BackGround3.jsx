@@ -14,7 +14,7 @@ const BackGround3 = () => {
         <div className="goal-content">
             <DevProcess className="goal-list col13 row1 z-index" dataAos="fade-down-right" dataAosDuration="2000" src={quality} alt="Chất lượng" p="text22" content="Chất lượng hàng đầu" />
             <DevProcess className="goal-list col46 row1 z-index" dataAos="fade-down-right" dataAosDuration="2000" src={success} alt="Ước mơ" p="text22" content="Nâng tầm ước mơ" />
-            <div className="goal-img col25 row2" dataAos="zoom-in" dataAosDuration="1000">
+            <div className="goal-img col25 row2" data-aos="zoom-in" data-aos-duration="1000">
                 <img className="widthbig" src={cooperation} alt="Thành công bền vững"/>
             </div>
             <DevProcess className="goal-list col13 row3 z-index" dataAos="fade-down-right" dataAosDuration="2000" src={trust} alt="Niềm tin" p="text22" content="Giá trị niềm tin" />
