@@ -9,6 +9,8 @@ const navBarClassName = (navBarStatus) => {
 
 const NavBar = () => {
     const loginCtx = useContext(UserContext);
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    let randomColor2 = Math.floor(Math.random()*16777215).toString(16);
 
     const handleLogout = () => {
         loginCtx.setUser(null);
@@ -30,7 +32,9 @@ const NavBar = () => {
                 <MenuItem link="/exercise" linkName="Học tập" />
                 <MenuItem link="/contact" linkName="Liên hệ" />
                 {loginCtx.user ? 
-                    <div style={{color: "orange"}}>{"Welcome, " + loginCtx.user.username}</div> 
+                    <div style={{color: `#${randomColor2}`, textAlign: "center"}}>Welcome, <br />
+                        <div style={{textTransform: "uppercase", color: `#${randomColor}`}}>{loginCtx.user.username}</div>
+                    </div> 
                     : <MenuItem link="/login" linkName="Đăng nhập" />
                 }
                 {loginCtx.user ? 
