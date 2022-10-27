@@ -1,7 +1,7 @@
 import './Login.css'
 import logInImg from "../../Asset/Background/log in img.jpg";
 import logInImg2 from "../../Asset/Background/log in img2.jpg";
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, Navigate } from 'react-router-dom'
 import { useState } from 'react';
 import http from '../../Utils/Axios.js';
 import {useContext} from 'react';
@@ -22,7 +22,11 @@ const Login = () => {
         try {
             const response = await http.post('login', values);
             // console.log(response);
-            localStorage.setItem("jwt", response.data.token);
+            if (values.rememberMe === true) {
+                localStorage.setItem("jwt", response.data.token);
+            } else {
+                sessionStorage.setItem("jwt", response.data.token);
+            }
             userCtx.setUser(response.data);
             navigate('/home');
         } catch (err) {
@@ -46,6 +50,11 @@ const Login = () => {
             }
         });
     };
+
+    // if user tries to access login, they will be redirected to home instead
+    if (userCtx.user) {
+        return <Navigate to="/" replace />
+    } 
 
     return (
         <div className='log-in'>

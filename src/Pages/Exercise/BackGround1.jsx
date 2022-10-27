@@ -12,7 +12,7 @@ import { useRef } from "react";
 
 const BackGround1 = () => {
     const game = useRef();
-    console.log(game.current);
+    // console.log(game.current);
     function scrollToGame() {
         game.current.scrollIntoView();
     }

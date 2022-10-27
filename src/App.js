@@ -12,12 +12,34 @@ import Contact from './Pages/Contact';
 import NotFound from './NotFound';
 import BackToTop from './BackToTop'
 import UserContext from './Context';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
+import http from './Utils/Axios';
 
 function App() {
   AOS.init();
+
+  useEffect(() => {
+    if (!localStorage.getItem("jwt") && !sessionStorage.getItem("jwt")) {
+      return;
+    }
+    // before access this api, the request interceptor run first. Check './Utils/Axios'
+        // first way to write:
+    // const getProfile = async () => {
+    //   const response = await http.get('/profile/me')
+    //     console.log(response);
+    //     setUser(response.data)
+    // }
+    // getProfile();
+        // second way to write
+    http.get('/profile/me')
+      .then((response) => {
+        // console.log(response.data);
+        setUser(response.data);
+      })
+  },[]);
+
   const [user, setUser] = useState(null);
   return (
     <div className="App">
