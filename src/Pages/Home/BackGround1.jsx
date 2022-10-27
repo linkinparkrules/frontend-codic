@@ -21,10 +21,10 @@ const BackGround1 = () => {
                     </Buttons>
                 </div>
                 <div className="slogan-image">
-                    <Images className="slg-img1" data-aos="fade-down-right" data-aos-duration="1000" src={intro1} alt="Ảnh học code"/>
-                    <Images className="slg-img2" data-aos="fade-down-down" data-aos-duration="1000" src={intro2} alt="Ảnh học code"/>
-                    <Images className="slg-img3" data-aos="fade-down-up" data-aos-duration="1000" src={intro3} alt="Ảnh học code"/>
-                    <Images className="slg-img4" data-aos="fade-down-left" data-aos-duration="1000" src={intro4} alt="Ảnh học code"/>
+                    <Images className="slg-img1" dataAos="fade-down-right" dataAosDuration="1000" src={intro1} alt="Ảnh học code"/>
+                    <Images className="slg-img2" dataAos="fade-down-down" dataAosDuration="1000" src={intro2} alt="Ảnh học code"/>
+                    <Images className="slg-img3" dataAos="fade-down-up" dataAosDuration="1000" src={intro3} alt="Ảnh học code"/>
+                    <Images className="slg-img4" dataAos="fade-down-left" dataAosDuration="1000" src={intro4} alt="Ảnh học code"/>
                 </div>
             </div>
         </>

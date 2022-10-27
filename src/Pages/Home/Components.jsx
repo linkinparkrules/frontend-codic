@@ -1,8 +1,5 @@
 import { Link } from 'react-router-dom';
-// import 'aos/dist/aos.css';
-import AOS from 'aos';
 
-AOS.init();
 export const Numbers = (props) => {
     return (
         <div>

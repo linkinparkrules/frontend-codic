@@ -5,7 +5,7 @@ import BackGround8 from "../Home/BackGround8";
 const Exercise = () => {
     return (
         <>  
-            <BackGround1 />
+            <BackGround1/>
             <BackGround2 />
             <BackGround8 />
         </>

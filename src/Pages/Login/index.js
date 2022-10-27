@@ -2,14 +2,14 @@ import './Login.css'
 import logInImg from "../../Asset/Background/log in img.jpg";
 import logInImg2 from "../../Asset/Background/log in img2.jpg";
 import { Link, useNavigate } from 'react-router-dom'
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import { useState } from 'react';
 import http from '../../Utils/Axios.js';
+import {useContext} from 'react';
+import UserContext from '../../Context';
 
 const Login = () => {
-    AOS.init();
     const navigate = useNavigate();
+    const userCtx = useContext(UserContext);
     const [values, setValues] = useState({
         username: "",
         password: "",
@@ -21,7 +21,9 @@ const Login = () => {
         event.preventDefault();
         try {
             const response = await http.post('login', values);
-            // console.log(response)
+            // console.log(response);
+            localStorage.setItem("jwt", response.data.token);
+            userCtx.setUser(response.data);
             navigate('/home');
         } catch (err) {
             setLoginErr(err.response.data);
@@ -46,37 +48,37 @@ const Login = () => {
     };
 
     return (
-        <section>
+        <div className='log-in'>
             <img className="login-img-bottom" data-aos="fade-up-right" data-aos-duration="2000"
                 src={logInImg} alt="Ảnh đăng nhập" />
             <img className="login-img-top" data-aos="fade-down-left" data-aos-duration="2000"
                 src={logInImg2} alt="Ảnh đăng nhập" />
             {/* <!--Bắt Đầu Phần Nội Dung--> */}
-            <div className="content">
-                <div className="form" id="login">
+            <div className="login-content">
+                <div className="login-form" id="login">
                     <h2>Đăng Nhập</h2>
-                    <div className="password-messenger" >{loginErr}</div>
+                    <div className="login-password-messenger" >{loginErr}</div>
                     <form action="" onSubmit={handleSubmit}>
-                        <LoginForm className="input-form" messenge="Tên Người Dùng" type="text"
+                        <LoginForm className="login-input-form" messenge="Tên Người Dùng" type="text"
                             name="username" value={values.username} event={handleValueChange} />
-                        <LoginForm className="input-form" messenge="Mật Khẩu" type="password"
+                        <LoginForm className="login-input-form" messenge="Mật Khẩu" type="password"
                             name="password" value={values.password} event={handleValueChange} />
-                        <LoginForm className="remember-info" messenge="Nhớ Đăng Nhập" type="checkbox"
+                        <LoginForm className="login-remember-info" messenge="Nhớ Đăng Nhập" type="checkbox"
                             name="rememberMe" value={values.rememberMe} event={handleValueChange} />
-                        <LoginForm className="input-form" type="submit" value="Đăng Nhập" />
-                        <div className="input-form">
+                        <LoginForm className="login-input-form" type="submit" value="Đăng Nhập" />
+                        <div className="login-input-form">
                             <p>Bạn Chưa Có Tài Khoản? <Link to="/signup">Đăng Ký</Link></p>
                         </div>
                     </form>
                     <h3>Đăng Nhập Bằng Mạng Xã Hội</h3>
-                    <ul className="channel-icon">
+                    <ul className="login-channel-icon">
                         <li><i className="fa-brands fa-facebook"></i></li>
                         <li><i className="fa-brands fa-google"></i></li>
                     </ul>
                 </div>
             </div>
             {/* <!--Kết Thúc Phần Nội Dung--> */}
-        </section>
+        </div>
     );
 };
 

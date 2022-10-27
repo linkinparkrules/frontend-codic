@@ -1,11 +1,14 @@
 import { NavLink, Link } from 'react-router-dom';
 import codicLogo from './Asset/Icon/codic.png';
+import { useContext } from 'react';
+import UserContext from './Context';
 
 const navBarClassName = (navBarStatus) => {
     return navBarStatus.isActive? "menu-item-active" : "menu-item-inactive";
-}
+};
 
 const NavBar = () => {
+    const loginCtx = useContext(UserContext);
     return (
         <div className="navi-bar">
             <div className="logo">
@@ -19,8 +22,11 @@ const NavBar = () => {
                 <MenuItem link="/introduction" linkName="Giới thiệu" />
                 <MenuItem link="/exercise" linkName="Học tập" />
                 <MenuItem link="/contact" linkName="Liên hệ" />
-                <MenuItem link="/login" linkName="Đăng nhập" />
                 <MenuItem link="/signup" linkName="Đăng ký" />
+                {loginCtx.user ? 
+                    <MenuItem link={null} linkName={"Welcome " + loginCtx.user.username} /> 
+                    : <MenuItem link="/login" linkName="Đăng nhập" />
+                }
             </div>
             <hr />
         </div>

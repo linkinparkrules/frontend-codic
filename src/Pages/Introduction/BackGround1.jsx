@@ -9,7 +9,7 @@ const BackGround1 = () => {
         <div className="company-info">
             <h1 className="heading1">Thông tin về công ty</h1>
             <div className="company-info-content">
-                <div className="company-intro" dataAos="fade-left" dataAosDuration="2000">
+                <div className="company-intro" data-aos="fade-left" data-aos-duration="2000">
                     <p className="text18">Codic là công ty khởi nghiệp được thành lập vào năm 2018 bởi Giáo sư ngành ngôn
                         ngữ học - Bà Nguyễn Thị Thuỳ Linh.</p>
                     <p className="text18">Với mục tiêu lấy chất lượng làm yếu tố hàng đầu, Codic muốn mang đến môi trường
@@ -23,13 +23,13 @@ const BackGround1 = () => {
                     </p>
                 </div>
                 <div className="company-img">
-                    <div className="cpn-img-top" dataAos="fade-down" dataAosDuration="1000">
+                    <div className="cpn-img-top" data-aos="fade-down" data-aos-duration="1000">
                         <img src={company} alt="Ảnh công ty" />
                     </div>
-                    <div className="cpn-img-bottom-left" dataAos="fade-up-left" dataAosDuration="1500">
+                    <div className="cpn-img-bottom-left" data-aos="fade-up-left" data-aos-duration="1500">
                         <img src={meeting} alt="Ảnh công ty" />
                     </div>
-                    <div className="cpn-img-bottom-right" dataAos="fade-up-right" dataAosDuration="2000">
+                    <div className="cpn-img-bottom-right" data-aos="fade-up-right" data-aos-duration="2000">
                         <img src={workspace} alt="Ảnh công ty" />
                     </div>
                 </div>
