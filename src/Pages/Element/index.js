@@ -1,10 +1,11 @@
 import { Container, HtmlTag, CssTag, JsTag } from "./Container";
 import './Element.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import http from '../../Utils/Axios';
 
 const Element = () => {
     const [tag, setTag] = useState();
+    const previousIdTarget = useRef();
     useEffect(() => {
         http.get('/exercise/element')
             .then((res) => {
@@ -19,11 +20,16 @@ const Element = () => {
     }
 
     function handleClick(event) {
-        const js = document.getElementById(event.target.value);
-        js.classList.toggle("show");
+        const prevId = document.getElementById(previousIdTarget.current);
+        // nếu prevId trả kết quả null thì ko chạy remove show (lần bấm nút đầu tiên)
+        if (prevId) {
+            prevId.classList.remove("show");
+        }
+        const idTarget = document.getElementById(event.target.value);
+        idTarget.classList.toggle("show");
+        previousIdTarget.current = event.target.value;
     }
 
-    
     return (
         <>
             <Container heading="Thẻ HTML">
