@@ -12,6 +12,22 @@ const Element = () => {
                 setTag(res.data);
             });
     }, [])
+    
+    // sử dụng useEffect + addEventListener để chạy event "nếu bấm ngoài nút button"
+    useEffect(() => {
+        function clickOutsideButton(event) {
+            if (!event.target.matches(".element-item")) {
+                const prevId = document.getElementById(previousIdTarget.current);
+                if (prevId) {
+                    prevId.classList.remove("show");
+                }
+            }
+        }
+        document.addEventListener("click", clickOutsideButton);
+        return () => {
+            document.removeEventListener("click", clickOutsideButton)
+        }
+    })
 
     if (!tag) {
         return <h1 style={{ margin: "auto", height: "100%" }}>
