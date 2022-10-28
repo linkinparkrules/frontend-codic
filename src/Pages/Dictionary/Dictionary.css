@@ -12,12 +12,12 @@
   body {
     font-family: Montserrat Reg;
     min-height: 100vh;
-    background-size: cover;
-    background-image: url(../../Asset/Background/Dic\ bgr/dic\ bgr\ 13.jpg);
     transition: all 0.2s ease;
   }
   
   .dictionary {
+    background-size: cover;
+    background-image: url(../../Asset/Background/Dic\ bgr/dic\ bgr\ 13.jpg);
     display: flex;
     align-items: center;
     justify-content: center;
