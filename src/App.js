@@ -25,14 +25,6 @@ function App() {
       return;
     }
     // before access this api, the request interceptor run first. Check './Utils/Axios'
-        // first way to write:
-    // const getProfile = async () => {
-    //   const response = await http.get('/profile/me')
-    //     console.log(response);
-    //     setUser(response.data)
-    // }
-    // getProfile();
-        // second way to write
     http.get('/profile/me')
       .then((response) => {
         // console.log(response.data);

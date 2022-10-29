@@ -16,12 +16,12 @@
   }
   
   .dictionary {
-    background-size: cover;
+    background-size: 100%;
     background-image: url(../../Asset/Background/Dic\ bgr/dic\ bgr\ 13.jpg);
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 89vh;
   }
   
   ::selection {
@@ -44,6 +44,7 @@
   }
   
   .wrapper .search {
+    display: flex;
     position: relative;
     margin: 35px 0 18px;
   }
@@ -86,10 +87,17 @@
   }
   
   .search span {
-    right: 15px;
+    right: 70px;
     cursor: pointer;
     font-size: 18px;
     display: none;
+  }
+
+  .search button {
+    padding-inline: 5px;
+    background-color: blue;
+    color: white;
+    font-size: 15px;
   }
   
   .search input:valid~span {
@@ -98,7 +106,6 @@
   
   .wrapper .info-text {
     font-size: 13px;
-    color: #9A9A9A;
     margin: -3px 0 -10px;
   }
   
@@ -180,7 +187,7 @@
     color: #7E7E7E;
   }
   
-  .content .synonyms .list {
+  .content .synonyms .listSynonyms {
     display: flex;
     flex-wrap: wrap;
   }
