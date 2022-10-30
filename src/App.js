@@ -8,6 +8,8 @@ import SignUp from './Pages/SignUp';
 import Exercise from './Pages/Exercise';
 import Dictionary from './Pages/Dictionary';
 import Element from './Pages/Element';
+import Bug from './Pages/Bug';
+import DragDrop from './Pages/DragDrop';
 import Contact from './Pages/Contact';
 import NotFound from './NotFound';
 import BackToTop from './BackToTop'
@@ -45,6 +47,8 @@ function App() {
           <Route path='/exercise' element={<Exercise />} />
           <Route path='/exercise/dictionary' element={<Dictionary />} />
           <Route path='/exercise/element' element={<Element />} />
+          <Route path='/exercise/bug' element={<Bug />} />
+          <Route path='/exercise/dragdrop' element={<DragDrop />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
