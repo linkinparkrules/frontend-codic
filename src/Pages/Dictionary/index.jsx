@@ -82,6 +82,7 @@ const Dictionary = () => {
                 setSynonym("");
             } else {
                 setSynonymDisplay("block");
+                //
                 setSynonym(synonyms.synonyms.map((sym, index) => {
                     if (index >= 3) {
                         return <span key={index}></span>;
@@ -119,9 +120,8 @@ const Dictionary = () => {
                 <header className="heading1">Từ điển Tiếng Anh</header>
                 <form className="search" onSubmit={handleSubmitWord}>
                     <input autoFocus ref={searchInput} type="text" placeholder="Tìm kiếm từ" name="word" value={wordInput} onChange={(e) => { setWordInput(e.target.value) }} />
-                    <i className="fas fa-search"></i>
-                    <span className="material-icons" onClick={removeWord}>close</span>
-                    <button type="submit">Search</button>
+                    <span onClick={removeWord}><i class="fa-solid fa-xmark"></i></span>
+                    <button type="submit"><i className="fas fa-search"></i></button>
                 </form>
                 <p className="info-text" style={{ color: infoTextColor }}>{infoText}</p>
                 <ul>

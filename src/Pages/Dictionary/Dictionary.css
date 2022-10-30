@@ -55,13 +55,13 @@
     width: 100%;
     outline: none;
     font-size: 16px;
-    border-radius: 5px;
-    padding: 0 42px;
-    border: 1px solid #999;
+    border-radius: 4px 0 0 4px;
+    padding: 0 10px;
+    border: 2px solid rgb(85, 203, 243);
   }
   
   .search input:focus {
-    padding: 0 41px;
+    padding: 0 10px;
     border: 2px solid #4D59FB;
   }
   
@@ -69,12 +69,12 @@
     color: #B8B8B8;
   }
   
-  .search :where(i, span) {
+  /* .search :where(i, button) {
     position: absolute;
     top: 50%;
     color: #999;
     transform: translateY(-50%);
-  }
+  } */
   
   .search i {
     left: 18px;
@@ -87,17 +87,25 @@
   }
   
   .search span {
-    right: 70px;
+    right: 13%;
     cursor: pointer;
     font-size: 18px;
     display: none;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    color: #999;
+    transform: translateY(-50%);
   }
 
   .search button {
     padding-inline: 5px;
-    background-color: blue;
+    background-color: rgb(85, 203, 243);
     color: white;
     font-size: 15px;
+    width: 40px;
+    border-radius: 0 4px 4px 0;
+    border: 2px solid rgb(85, 203, 243);
   }
   
   .search input:valid~span {

@@ -30,9 +30,11 @@ const Element = () => {
     })
 
     if (!tag) {
-        return <h1 style={{ margin: "auto", height: "100%" }}>
+        return <div className="elementLoading">
+            <div>
             Loading... {"(Chờ tý đi, kiến thức không vội vã được đâu!)"}
-        </h1>
+            </div>
+        </div>
     }
 
     function handleClick(event) {

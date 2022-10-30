@@ -9,6 +9,17 @@
     padding-top: 30px;
 }
 
+.elementLoading {
+    background-color: #FF6701;
+    height: 89.999vh;
+    font-size: 50px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 /* Dropdown Button */
 .element-item {
     position: relative;
