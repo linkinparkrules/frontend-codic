@@ -1,4 +1,4 @@
-import "./dragdrop.module.css";
+import "./dragdrop.css";
 import selection from "../../../Asset/Background/selection.jpg";
 
 const Dragdrop = () => {

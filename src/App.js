@@ -9,6 +9,7 @@ import Exercise from './Pages/Exercise';
 import Dictionary from './Pages/Dictionary';
 import Element from './Pages/Element';
 import Dragdrop from './Pages/Game/Dragdrop';
+import Bug from './Pages/Game/Bug';
 import Contact from './Pages/Contact';
 import NotFound from './NotFound';
 import BackToTop from './BackToTop'
@@ -47,6 +48,7 @@ function App() {
           <Route path='/exercise/dictionary' element={<Dictionary />} />
           <Route path='/exercise/element' element={<Element />} />
           <Route path='/exercise/dragdrop' element={<Dragdrop />} />
+          <Route path='/exercise/bug' element={<Bug />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
