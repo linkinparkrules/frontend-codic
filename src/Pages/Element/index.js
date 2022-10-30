@@ -10,7 +10,9 @@ const Element = () => {
         http.get('/exercise/element')
             .then((res) => {
                 setTag(res.data);
-            });
+            }).catch((err) => {
+                console.log(err.message);
+            })
     }, [])
     
     // sử dụng useEffect + addEventListener để chạy event "nếu bấm ngoài nút button"

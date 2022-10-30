@@ -11,16 +11,16 @@ body {
     font-size: 30px;
 }
 
-/* Background selection */
-.selection{
+/* Background dragdropSelection */
+.dragdropSelection{
     display: flex;
 }
 
-.selection > img{
+.dragdropSelection > img{
     width: 50vw;
     /* height: 80vh; */
 }
-.content-selection{
+.content-dragdropSelection{
     width: 50vw;
     background-color: #C2DED1;
     display: flex;
@@ -31,12 +31,12 @@ body {
     /* line-height: 250%; */
 }
 
-.content-selection > h2{
+.content-dragdropSelection > h2{
     font-size: 40px;
     margin-bottom: 30px;
 }
 
-.content-selection > button{
+.content-dragdropSelection > button{
     width: 35%;
     margin: 10px;
     height: 40px;
@@ -51,20 +51,20 @@ body {
             0 16px 16px rgba(0, 0, 0, 0.12);
 }
 
-.content-selection > button > a :hover{
+.content-dragdropSelection > button > a :hover{
     transform: translateY(8px);
     transition: ease-out;
     transition-duration: 0.3s;
 }
 
-.content-selection > button > a{
+.content-dragdropSelection > button > a{
     color: black;
     font-size: 25px;
 }
 
 /* background toàn màn hình */
 .dragdrop-game {
-    background-image: url(../../..//Asset/Background/dragdrop\ bgr.jpg);
+    background-image: url(../../../Asset/Background/dragdrop\ bgr.jpg);
     background-size: cover;
     height: 100vh;
     display: none;

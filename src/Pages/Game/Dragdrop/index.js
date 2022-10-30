@@ -1,16 +1,16 @@
-import "./dragdrop.css";
+import "./dragdrop.module.css";
 import selection from "../../../Asset/Background/selection.jpg";
 
 const Dragdrop = () => {
     return (
         <>
             {/* <!-- Background lựa kiến thức chơi --> */}
-            <div class="selection">
-                <div class="content-selection">
+            <div className="dragdropSelection">
+                <div className="content-dragdropSelection">
                     <h2>Let's play and chill</h2>
                     <p>Hãy cùng giải trí và học tập. Tăng hiệu quả, khả năng tiếp thu.</p>
                     <p>Chơi thôi nào!!!</p>
-                    <p class="margin10">Hãy lựa chọn ngôn ngữ bạn muốn luyện tập:</p>
+                    <p className="margin10">Hãy lựa chọn ngôn ngữ bạn muốn luyện tập:</p>
                     <button id="html"><a href="#dragdrop">HTML</a></button>
                     <button id="css"><a href="#dragdrop">CSS</a></button>
                     <button id="js"><a href="#dragdrop">Javacript</a></button>
@@ -20,24 +20,24 @@ const Dragdrop = () => {
             </div>
 
             {/* <!-- Trò chơi --> */}
-            <div class="dragdrop-game" id="dragdrop">
-                <div class="game-infor">
-                    <h1 class="heading1">Kéo và thả - Drag and drop</h1>
-                    <p class="center"></p>
+            <div className="dragdrop-game" id="dragdrop">
+                <div className="game-infor">
+                    <h1 className="heading1">Kéo và thả - Drag and drop</h1>
+                    <p className="center"></p>
                     <div id="time"></div>
                 </div>
-                <div class="game-area">
-                    <div class="definition">
-                        <div class="board1">
-                            {/* <!-- <p class="meaning"><span class="blank" id="background-color"></span>: màu nền</p> --> */}
+                <div className="game-area">
+                    <div className="definition">
+                        <div className="board1">
+                            {/* <!-- <p className="meaning"><span className="blank" id="background-color"></span>: màu nền</p> --> */}
                         </div>
 
                     </div>
-                    <div class="Lists">
-                        {/* <!-- <p class="css" draggable="true"></p> --> */}
+                    <div className="Lists">
+                        {/* <!-- <p className="css" draggable="true"></p> --> */}
                     </div>
                 </div>
-                <div class="btn">
+                <div className="btn">
                     <button type="button" id="nextStage">Continue</button>
                     <button type="button" id="retry">Retry</button>
                 </div>
