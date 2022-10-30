@@ -8,8 +8,8 @@ import SignUp from './Pages/SignUp';
 import Exercise from './Pages/Exercise';
 import Dictionary from './Pages/Dictionary';
 import Element from './Pages/Element';
-import Bug from './Pages/Bug';
-import DragDrop from './Pages/DragDrop';
+import Bug from './Pages/Game/Bug';
+import DragDrop from './Pages/Game/Dragdrop';
 import Contact from './Pages/Contact';
 import NotFound from './NotFound';
 import BackToTop from './BackToTop'

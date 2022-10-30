@@ -1,7 +1,7 @@
 import { useRef,  useState, useEffect } from "react";
 import "./DragDrop.css"
-import selection from '../../Asset/Background/selection.jpg'
-import http from "../../Utils/Axios"
+import selection from '../../../Asset/Background/selection.jpg'
+import http from "../../../Utils/Axios"
 
 const BackGround1 = () => {
     const [displayGame, setDisplayGame] = useState("none")
