@@ -24,7 +24,7 @@ const BackGround4 = () => {
                     <Numbers h2="Bài tập trò chơi" p="Kết hợp thực hành và giải trí, nâng cao hiệu quả học tập" />
                 </Cards>
                 <Cards className="row3-4 col1-3 bgr-orange" dataAos="fade-right" dataAosDuration="2000">
-                    <Numbers h2="Thực tiễn" p="Bài tập sát với kiến thức cần thiết để đi làm" />
+                    <Numbers h2="Kiến thức thực tiễn" p="Bài tập sát với kiến thức cần thiết để đi làm" />
                 </Cards>
                 <Images className="row3-4 col3-4" src={exercise3} alt="Học code" />
             </div>

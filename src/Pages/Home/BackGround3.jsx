@@ -13,9 +13,9 @@ const BackGround3 = () => {
                 <h1 className="heading1">
                     Tiết kiệm thời gian ghi nhớ thẻ</h1>
                 <Cards className="element-number">
-                    <Numbers h2="300+" p="thẻ HTML, CSS, JS" />
-                    <Numbers h2="400+" p="chú thích" />
-                    <Numbers h2="300+" p="ví dụ" />
+                    <Numbers h2="300+" p="Thẻ HTML, CSS, JS" />
+                    <Numbers h2="400+" p="Chú thích" />
+                    <Numbers h2="300+" p="Ví dụ" />
                 </Cards>
             </div>
             <div className="element-content">
