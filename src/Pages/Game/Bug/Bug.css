@@ -1,4 +1,9 @@
 .gameContainer {
+    background-image: url(../../../Asset/Background/bug\ bgr.jpg);
+    background-size: cover;
+}
+
+.gameContainer {
     background-image: url(../../../Asset/Background/Dic\ bgr/dic\ bgr\ 6.jpg);
     display: flex;
     flex-direction: column;

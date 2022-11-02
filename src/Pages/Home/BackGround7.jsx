@@ -20,7 +20,7 @@ const BackGround7 = () => {
                         <br />Zoom Group
                     </Images>
                     <Images dataAos="fade-down" dataAosDuration="1300" src={beat} alt="Đối tác">
-                        <br />Beats Bill Group
+                        <br />Beats Bill
                     </Images>
                     <Images dataAos="fade-down" dataAosDuration="1600" src={google} alt="Đối tác">
                         <br />Photo Gallery
