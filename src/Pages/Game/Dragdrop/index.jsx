@@ -3,41 +3,63 @@ import "./DragDrop.css"
 import selection from '../../../Asset/Background/selection.jpg';
 import { Drag, Drop } from './dragNdrop.js'
 import http from "../../../Utils/Axios";
+import { CountDownClock } from "./CountDownClock";
 
 const DragDrop = () => {
-    const [displayGame, setDisplayGame] = useState("none");
+    // lưu trữ data lấy từ database
     const [data, setData] = useState();
-    let timeLimit = useRef(10);
-    let time = useRef(timeLimit.current);
-    const [countdownTime, setCountdownTime] = useState(time.current);
+    // // check xem người dùng có thắng ko, giá trị ban đầu là true
+    const checkWin = useRef(true);
+    // check xem người dùng đã hoàn thành màn chơi chưa, hoàn thành thì count = wordNum
+    const [count, setCount] = useState(0);
+    // hiển thị nút sang màn chơi mới
     const [nextDisplay, setNextDisplay] = useState("none");
+    // hiển thị nút chơi lại
     const [retryDisplay, setRetryDisplay] = useState("none");
-
-    let list = [];
-    let meaning = [];
-
-    // vieets laij
+    // hiển thị màn hình trò chơi
+    const [displayGame, setDisplayGame] = useState("none");
+    // // đây là thời gian limit ban đầu
+    // let timeLimit = useRef(10);
+    // // đây là thời gian sẽ thay đổi theo từng giây đếm ngược
+    // let time = useRef(timeLimit.current);
+    // đây là chiều dài array của dữ liệu dài nhất trong 3 loại là html, css, js
     const longestDataLength = useRef();
+    // đây là dữ liệu loại trò chơi. có 3 loại là html, css, js
     const gameSelection = useRef([]);
-    const draggedItem = useRef(false);
-    const initialDroppedIdNum = useRef([]);
+    // đây là giá trị ban đầu nằm trong ô trống blank (là một thẻ rỗng span)
     const initialDroppedItem = useRef([]);
-    const droppedIdNum = useRef([]);
-    const droppedName = useRef("-1");
-    const blankPadding = useRef([]);
-    const [blankDisplay, setBlankDisplay] = useState([]);
-    const [dragDisplay, setDragDisplay] = useState([]);
-    const [dropDisplay, setDropDisplay] = useState([]);
-    const [dragName, setDragName] = useState([]);
-    const [dropInfo, setDropInfo] = useState([]);
+    // thay đổi hiển thị các thẻ drop tùy vào màn chơi
     const [droppedItem, setDroppedItem] = useState([])
+    // đây là số thứ tự của các thẻ drag-drop tương ứng
+    const initialDroppedIdNum = useRef([]);
+    // đây là số thứ tự của các thẻ drop tương ứng sau khi shuffle
+    const droppedIdNum = useRef([]);
+    // đây là số thứ tự của các thẻ drag tương ứng sau khi shuffle (shuffle lần nữa sau drop)
+    const draggedIdNum = useRef([]);
+    // đây là id của thẻ drop mà event đang target đến (event.target.id) (chưa target thì giá trị bằng -1)
+    const droppedName = useRef(-1);
+    // đây là dữ liệu ban đầu của kích thước ô trống blank (7px 80px)
+    const blankPadding = useRef([]);
+    // thay đổi dữ liệu của kích thước ô trống blank
+    const [blankDisplay, setBlankDisplay] = useState([]);
+    // thay đổi hiển thị các thẻ drag
+    const [dragDisplay, setDragDisplay] = useState([]);
+    // thay đổi hiển thị các thẻ drop
+    const [dropDisplay, setDropDisplay] = useState([]);
+    // thay đổi tên các thẻ drag
+    const [dragName, setDragName] = useState([]);
+    // thay đổi thông tin các thẻ drop gồm name, meaning, index(vị trí)
+    const [dropInfo, setDropInfo] = useState([]);
+    // thay đổi sổ thẻ hiển thị tùy vào màn chơi
     const [wordNum, setWordNum] = useState(4);
+    // thay đổi khả năng kéo drag các thẻ
     const [dragability, setDragability] = useState("true");
+    // chọn màn chơi thì kéo giao diện ng dùng vào màn hình game
     const dragDrop = useRef();
     useEffect(() => {
         http.get("/exercise/element")
             .then((res) => {
-                console.log(res.data)
+                // console.log(res.data)
                 setData({
                     html: res.data.htmlTag,
                     css: res.data.cssTag,
@@ -71,6 +93,7 @@ const DragDrop = () => {
                 initialDroppedItem.current = newArr("droppedItem");
                 initialDroppedIdNum.current = newArr("droppedIdNum");
                 blankPadding.current = newArr("7px 80px");
+                draggedIdNum.current = newArr(-1);
             }).catch((err) => {
                 console.log(err.message);
             })
@@ -80,6 +103,7 @@ const DragDrop = () => {
     function scrollToGame(event) {
         // console.log(data);
         setDisplayGame("block");
+        setWordNum(4);
         switch (event.target.id) {
             case "html":
                 gameSelection.current = data.html;
@@ -106,7 +130,7 @@ const DragDrop = () => {
         droppedIdNum.current = initialDroppedIdNum.current;
         shuffleWord();
         stagePlay();
-        // countDownClock();
+        // checkTime(time.current);
     }
 
     // shuffle từ lên
@@ -119,7 +143,8 @@ const DragDrop = () => {
         }
         // set tên các thẻ vào thẻ drop
         setDropInfo(gameSelection.current.map((info, index) => {
-            return { name: info.name, meaning: info.meaning, index: droppedIdNum.current[index]}
+
+            return { name: info.name, meaning: info.meaning, index: droppedIdNum.current[index] }
         }))
         // shuffle lần nữa số thẻ tương ứng với màn chơi, và idNum để gán vào thẻ drag
         for (let i = wordNum - 1; i > 0; i--) {
@@ -128,7 +153,8 @@ const DragDrop = () => {
             [droppedIdNum.current[i], droppedIdNum.current[j]] = [droppedIdNum.current[j], droppedIdNum.current[i]];
         }
         // set tên các thẻ vào thẻ drag
-        setDragName(gameSelection.current.map((info) => {
+        setDragName(gameSelection.current.map((info, index) => {
+            draggedIdNum.current[index] = droppedIdNum.current[index];
             return info.name
         }))
     }
@@ -165,20 +191,46 @@ const DragDrop = () => {
     function dragEnd(event) {
         // nếu gán được vào thẻ cha có tên là blank thì thẻ từ tiếng anh này ko drag được nữa
         const dragEndDisplay = dragDisplay.map((display, index) => {
-            console.log("current: " + droppedName.current,"id: " + event.target.id);
-            if (droppedName.current === event.target.id) {
-                // console.log(draggedItem.current);
-                droppedName.current = "-1"
-                draggedItem.current = false;
-                return "none"
+            // console.log(+droppedName.current, +draggedIdNum.current[index], +event.target.id, event.target.style.display);
+            // chúng ta chỉ xử lý những dragDisplay trong màn chơi
+            if (index < wordNum) {
+                // nếu đã thả đúng ô
+                if (+droppedName.current !== -1) {
+                    // với thẻ thả đúng ô
+                    if (+droppedName.current === +draggedIdNum.current[index]) {
+                        droppedName.current = -1
+                        return display;
+                        // với các thẻ còn lại
+                    } else if (display === "none") {
+                        // nếu đã có thẻ điền vào ô trống rồi thì vẫn để giá trị thẻ đó như vậy
+                        return display;
+                    } else {
+                        // các thẻ chưa điền thì để hiển thị
+                        return "inline"
+                    }
+                    // nếu chưa thả đúng ô
+                } else {
+                    if (+draggedIdNum.current[index] === +event.target.id) {
+                        // nếu thẻ đang được trỏ trùng với id đang chạy trong map()
+                        // tức nếu thẻ đc trỏ đc drag sai chỗ
+                        return "inline"
+                    } else {
+                        // những thẻ còn lại
+                        if (display === "none") {
+                            // nếu đã có thẻ điền vào ô trống rồi thì vẫn để giá trị thẻ đó như vậy
+                            return display;
+                        } else {
+                            return "inline";
+                        };
+                    };
+                }
             } else {
-                // console.log(draggedItem.current);
-                return display
-            }
+                // những thẻ chưa có hiển thị trong màn chơi thì để mặc định như ban đầu
+                return display;
+            };
         })
-        setTimeout(() => {
-            setDragDisplay(dragEndDisplay)
-        }, 0)
+        setDragDisplay(dragEndDisplay);
+        
     }
     function drop(event) {
         // sử dụng event.dataTransfer.getData() để lấy giá trị của vật được thả từ bộ nhớ tạm,
@@ -189,8 +241,7 @@ const DragDrop = () => {
         if (dragged === dropped) {
             const newState = droppedItem.map(item => {
                 if (Object.keys(item)[0] === event.target.getAttribute("name")) {
-                    draggedItem.current = true;
-                    droppedName.current = event.target.getAttribute("name");
+                    droppedName.current = event.target.getAttribute("name")
                     return { [event.target.getAttribute("name")]: dragged }
                 } else {
                     return { ...item }
@@ -198,71 +249,80 @@ const DragDrop = () => {
             })
             setDroppedItem(newState);
             setBlankDisplay(blankDisplay.map((padding, index) => {
-                if (index === +event.target.getAttribute("name")) {
+                // BUG ABOUT JS DISPLAY LENGTH DIFFERENCE
+                // console.log(dropInfo[index].index, +event.target.getAttribute("name"));
+                if (dropInfo[index].index === +event.target.getAttribute("name")) {
                     return "5px 0px"
                 } else {
-                    return [...padding]
+                    return padding
                 }
             }))
-
-            // blank.style.padding = "5px 0px 5px 0px";
         }
     }
 
-    // useEffect(() => {
-    //     console.log(dragDisplay);
-    // },[dragDisplay])
-    useEffect(() => {
-        console.log(dropInfo[0]);
-    },[dropInfo])
+    // check xem thời gian về 0 chưa
+    function checkTime(now) {
+        if (now === 0) {
+            // set các thẻ ko drag kéo đc nữa
+            setDragability("false")
 
-
-    function countDownClock() {
-        let dragList = document.querySelector(".Lists");
-        // đếm ngược thời gian về 0
-        let countDown = setInterval(() => {
-            setCountdownTime((prev) => {
-                time.current = prev - 1
-                // console.log(time.current);
-                return prev - 1
-            });
-            checkTime(time.current);
-        }, 1000)
-        // check xem thời gian về 0 chưa
-        function checkTime(now) {
-            if (now === 0) {
-                setCountdownTime("HẾT GIỜ !!!");
-                for (let i = 0; i < dragList.children.length; i++) {
-                    dragList.children[i].setAttribute("draggable", false);
-                }
-                clearInterval(countDown);
-                if (dragList.children.length === 0) {
-                    alert("chúc mừng! Bạn đã thắng màn chơi này rồi !");
-                    setNextDisplay("block");
-                } else {
-                    alert("Bạn thua mất rồi.. Hãy cố gắng hơn lần sau nhé ! ");
-                    setRetryDisplay("block");
+            // nếu trong các thẻ drag có thẻ vẫn để display inline thì người chơi sẽ thua
+            for (let i = 0; i < wordNum; i++) {
+                console.log(dragDisplay[i]);
+                if (dragDisplay[i] === 'inline') {
+                    console.log("you lose");
+                    checkWin.current = false
                 }
             }
+            console.log(dragDisplay);
+            console.log(checkWin.current);
+            if (checkWin.current) {
+                alert("chúc mừng! Bạn đã thắng màn chơi này rồi !");
+                setNextDisplay("block");
+            } else {
+                alert("Bạn thua mất rồi.. Hãy cố gắng hơn lần sau nhé ! ");
+                setRetryDisplay("block");
+            };
+        };
+    };
+
+    useEffect(() => {
+        console.log(wordNum);
+    }, [wordNum])
+    // nếu điền hết thì hiện nút continue chuyển màn chơi tiếp
+    useEffect(() => {
+        let count = 0;
+        for (let i = 0; i < wordNum; i++) {
+            if (dragDisplay[i] === "none" ){
+                setCount(count++)
+            } else if (count === 0 ){
+                setCount(0);
+            } else {
+                setCount(count--);
+            };
+        };
+        if (count === wordNum) {
+            setNextDisplay("block");
+        } else {
+            setNextDisplay("none");
         }
-    }
+    },[dragDisplay, wordNum, count])
 
     function nextStage() {
-        // setTimeout(() => {
-        //     // if (wordNum < gameSelection.current.length) {
-        //     //     setWordNum(wordNum + 2);
-        //     //     setCountdownTime(timeLimit.current + 2);
-        //     // }
-        //     // GamePlay();
-        // }, 1)
+        if (wordNum < longestDataLength.current - 2) {
+            // setWordNum(wordNum + 2);
+            GamePlay();
+        } else {
+            alert("Bạn đã hoàn thành xuất sắc trò chơi này rồi!");
+        }
 
-        // console.log(gameSelection);
-        // console.log(wordNum);
-        // console.log(timeLimit.current);
     }
     function retryStage() {
 
     }
+    // useEffect(() => {
+    //     console.log(dragDisplay);
+    // }, [dragDisplay])
 
     if (!data) {
         return (
@@ -292,15 +352,15 @@ const DragDrop = () => {
                 <div className="game-infor">
                     <h1 className="heading1">Kéo và thả - Drag and drop</h1>
                     <p className="center"></p>
-                    <div id="time">{countdownTime}</div>
+                    {/* <CountDownClock/> */}
                 </div>
                 <div className="game-area">
                     <div className="definition">
                         <div className="board1">
                             {gameSelection.current.map((info, index) => {
-                                return <Drop key={index} display={dropDisplay[index]} id={dropInfo[index].name} padding={blankDisplay[index]}
+                                return <Drop key={dropInfo[index].index} display={dropDisplay[index]} id={dropInfo[index].name} padding={blankDisplay[index]}
                                     name={dropInfo[index].index} meaning={dropInfo[index].meaning} dragOver={dragOver} drop={drop}>
-                                    {droppedItem[index][index]}
+                                    {droppedItem[dropInfo[index].index][dropInfo[index].index]}
                                 </Drop>
                             })}
                         </div>

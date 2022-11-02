@@ -32,7 +32,6 @@ const NavBar = () => {
                 <MenuItem link="/introduction" linkName="Giới thiệu" />
                 <MenuItem link="/exercise" linkName="Học tập" />
                 <MenuItem link="/contact" linkName="Liên hệ" />
-                <MenuItem link="/signup" linkName="Đăng ký" />
                 {loginCtx.user ? 
                     <div style={{color: `#${randomColor2}`, textAlign: "center"}}>Welcome, <br />
                         <div style={{textTransform: "uppercase", color: `#${randomColor}`}}>{loginCtx.user.username}</div>
