@@ -2,6 +2,7 @@ import { NavLink, Link } from 'react-router-dom';
 import codicLogo from './Asset/Icon/codic.png';
 import { useContext } from 'react';
 import UserContext from './Context';
+import "./App.css"
 
 const navBarClassName = (navBarStatus) => {
     return navBarStatus.isActive? "menu-item-active" : "menu-item-inactive";

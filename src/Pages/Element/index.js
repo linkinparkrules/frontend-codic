@@ -32,7 +32,7 @@ const Element = () => {
     })
 
     if (!tag) {
-        return <div className="elementLoading">
+        return <div className="elementLoading" style={{ backgroundImage: `linear-gradient(to bottom right, #${Math.floor(Math.random() * 16777215).toString(16)}, #${Math.floor(Math.random() * 16777215).toString(16)})` }}>
             <div>
             Loading... {"(Chờ tý đi, kiến thức không vội vã được đâu!)"}
             </div>

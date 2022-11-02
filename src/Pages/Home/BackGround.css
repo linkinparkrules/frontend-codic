@@ -127,7 +127,7 @@
 
 .new-word-benefit>div {
     border-radius: 25%;
-    padding: 8px;
+    padding: 15px;
 }
 
 .new-word-benefit>div>h2 {
@@ -588,22 +588,23 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: #DB6400;
 }
-/* } */
 
 
-@media screen and (min-width: 768px){
-    .slogan-image>div>img {
-        height: 100%;
-        border-radius: 12px;
-        max-width: 150px;
+/* Mobile: width < 740px */
+/* @media only screen and (min-width: 740px) {
+    .slogan-image {
+        display: none;
     }
-}
+    .slogan > div > h1{
+        font-size: 8px;
+    }
+} */
 
-/*Tablet nhỏ(480 x 640)*/
-@media screen and (max-width: 768px){
+/*Tablet: width >= 740px and width < 1024px*/
+/* @media only screen and (min-width: 740px) and (max-width: 1024px) {
     .slogan-image>div>img {
         height: 100%;
         border-radius: 12px;
         max-width: 40px;
     }
-}
+} */
