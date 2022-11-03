@@ -32,7 +32,7 @@ const Element = () => {
     if (!tag) {
         return <div className="elementLoading">
             <div>
-            Loading... {"(Chờ tý đi, kiến thức không vội vã được đâu!)"}
+            Loading...
             </div>
         </div>
     }

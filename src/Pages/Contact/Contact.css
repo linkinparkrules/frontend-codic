@@ -2,9 +2,7 @@
     background-image: url(../../Asset/Background/contact\ bgr.jpg);
     background-size: cover;
 }
-@media screen {
-    
-}
+
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -40,4 +38,74 @@
 
 .margin-bottom {
     margin-bottom: 30px;
+}
+
+/*Tablet: width >= 768px and width < 1024px*/
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .contact-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.5fr 1fr;
+        grid-gap: 20px 30px;
+        text-align: center;
+        padding: 20px;
+    }
+
+
+    .contact-info {
+        line-height: 200%;
+        padding: 10px;
+    }
+
+    .message {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .lets-contact {
+        line-height: 150%;
+    }
+
+    .margin-bottom {
+        margin-bottom: 10px;
+    }
+
+}
+
+/* Mobile: width < 768px */
+@media only screen and (max-width: 768px) {
+    .contact-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 1fr 0.11fr;
+        grid-gap: 20px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .contact-content > .direct-contact > h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .contact-info {
+        font-size: 14px;
+        line-height: 170%;
+        padding: 10px;
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+
+    .contact-info > h2 {
+        font-size: 20px;
+    }
+
+    .lets-contact > h2, p{
+        display: none;
+    }
+
+    .margin-bottom {
+        margin-bottom: 10px;
+    }
 }

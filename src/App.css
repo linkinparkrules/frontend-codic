@@ -107,11 +107,25 @@ a {
 
 /*Tablet: width >= 768px and width < 1024px*/
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-
+    
     /* NAVIGATION BAR */
     .menu {
-        display: none;
+        width: 70%;
     }
+
+    .logo {
+        width: 30%;
+        text-align: left;
+    }
+
+    .logo>a {
+        font-size: 32px;
+    }
+
+    .logo-image {
+        width: 30px;
+    }
+
 
     /* BUTTON TO SCROLL TOP */
     .top-btn {
@@ -129,19 +143,22 @@ a {
 
     /* NAVIGATION BAR */
     .menu {
-        width: 50%;
+        width: 80%;
     }
+
     .logo {
-        width: 50%;
+        width: 20%;
         text-align: left;
     }
+
     .logo>a {
-        font-size: 32px;
+        font-size: 28px;
     }
-    
+
     .logo-image {
         width: 30px;
     }
+
     .menu-item {
         display: none;
     }

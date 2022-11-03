@@ -29,8 +29,8 @@ export const HtmlTag = (props) => {
                 <p>{props.meaning}</p>
                 <h4>Ví dụ</h4>
                 <p>{props.example}</p>
-                <h4>Trình duyệt</h4>
-                <p>{browserContent()}</p>
+                {/* <h4>Trình duyệt</h4>
+                <p>{browserContent()}</p> */}
             </div>
         </div>
     )
