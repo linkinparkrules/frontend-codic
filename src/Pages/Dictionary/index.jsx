@@ -120,7 +120,7 @@ const Dictionary = () => {
                 <header className="heading1">Từ điển Tiếng Anh</header>
                 <form className="search" onSubmit={handleSubmitWord}>
                     <input autoFocus ref={searchInput} type="text" placeholder="Tìm kiếm từ" name="word" value={wordInput} onChange={(e) => { setWordInput(e.target.value) }} />
-                    <span onClick={removeWord}><i class="fa-solid fa-xmark"></i></span>
+                    <span onClick={removeWord}><i className="fa-solid fa-xmark"></i></span>
                     <button type="submit"><i className="fas fa-search"></i></button>
                 </form>
                 <p className="info-text" style={{ color: infoTextColor }}>{infoText}</p>

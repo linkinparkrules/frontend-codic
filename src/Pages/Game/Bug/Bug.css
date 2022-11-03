@@ -4,6 +4,7 @@
 }
 
 .gameContainer {
+    background-image: url(../../../Asset/Background/Dic\ bgr/dic\ bgr\ 6.jpg);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,10 +18,13 @@
 }
 
 #userCode {
+    margin-top: 10px;
     background-color: rgba(255, 255, 255, 0.753);
     border-radius: 12px;
     padding: 8px;
     font-size: 16px;
+    rows: 5;
+    cols: 60;
 }
 
 #gameScreen {
@@ -36,6 +40,7 @@
 }
 
 #gameArea {
+    border: 1px solid rgba(0, 0, 0, 0.658);
     position: absolute;
     z-index: 1;
     width: 45vw;
@@ -49,6 +54,7 @@
 }
 
 #gameArea2 {
+    border: 1px solid rgba(0, 0, 0, 0.678);
     position: absolute;
     background-color: rgba(255, 255, 255, 0.616);
     width: 45vw;
@@ -96,10 +102,18 @@
     max-height: calc(70vh - 15px);
 }
 
+#bug > i {
+    font-size: calc(25px + 3vw)
+}
+
 #fire {
     height: calc(40vw);
     min-height: calc(300px);
     max-height: calc(70vh);
+}
+
+#fire > i {
+    font-size: calc(55px + 3vw);
 }
 
 .text22 {
@@ -110,4 +124,61 @@
 .heading {
     font-size: 40px;
     padding: 20px;
+}
+
+.show-in-phone{
+    display: none;
+}
+
+/*Tablet: width >= 768px and width < 1024px*/
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    
+    #userCode {
+        font-size: 14px;
+    }
+    
+    #nextStage {
+        font-size: 24px;
+        padding: 5px 15px;
+    }
+    
+    .gameContainer > .text22 {
+        font-size: 18px;
+        text-align: center;
+    }
+    
+    .gameContainer > .heading {
+        font-size: 32px;
+        padding: 20px;
+    }
+
+}
+
+/* Mobile: width < 768px */
+@media only screen and (max-width: 768px) {
+    #userCode {
+        font-size: 14px;
+        width: 80%;
+    }
+    
+    #nextStage {
+        font-size: 24px;
+        padding: 5px 15px;
+    }
+    
+    .show-in-phone{
+        display: block;
+        text-align: center;
+    }
+    
+    .gameContainer > .text22 {
+        font-size: 18px;
+        text-align: center;
+    }
+    
+    .gameContainer > .heading {
+        font-size: 24px;
+        padding: 10px;
+        text-align: center;
+    }
 }

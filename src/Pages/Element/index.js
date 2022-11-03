@@ -10,7 +10,9 @@ const Element = () => {
         http.get('/exercise/element')
             .then((res) => {
                 setTag(res.data);
-            });
+            }).catch((err) => {
+                console.log(err.message);
+            })
     }, [])
     
     // sử dụng useEffect + addEventListener để chạy event "nếu bấm ngoài nút button"
@@ -30,7 +32,7 @@ const Element = () => {
     })
 
     if (!tag) {
-        return <div className="elementLoading">
+        return <div className="elementLoading" style={{ backgroundImage: `linear-gradient(to bottom right, #${Math.floor(Math.random() * 16777215).toString(16)}, #${Math.floor(Math.random() * 16777215).toString(16)})` }}>
             <div>
             Loading...
             </div>
