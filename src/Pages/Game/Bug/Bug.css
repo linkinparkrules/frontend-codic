@@ -37,6 +37,7 @@
 }
 
 #gameArea {
+    border: 1px solid rgba(0, 0, 0, 0.658);
     position: absolute;
     z-index: 1;
     width: 45vw;
@@ -50,6 +51,7 @@
 }
 
 #gameArea2 {
+    border: 1px solid rgba(0, 0, 0, 0.678);
     position: absolute;
     background-color: rgba(255, 255, 255, 0.616);
     width: 45vw;
@@ -97,10 +99,18 @@
     max-height: calc(70vh - 15px);
 }
 
+#bug > i {
+    font-size: calc(25px + 3vw)
+}
+
 #fire {
     height: calc(40vw);
     min-height: calc(300px);
     max-height: calc(70vh);
+}
+
+#fire > i {
+    font-size: calc(55px + 3vw);
 }
 
 .text22 {

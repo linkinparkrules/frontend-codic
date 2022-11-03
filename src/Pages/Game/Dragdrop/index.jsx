@@ -102,8 +102,9 @@ const DragDrop = () => {
     // bấm chọn game thì kéo xuống game và setup các thẻ
     function scrollToGame(event) {
         // console.log(data);
-        setDisplayGame("block");
-        setWordNum(4);
+        setDragDisplay(dragDisplay.map((display, index) => {
+            if (display !== "none") { console.log(index + ": " + display); return "none" } else return display
+        }))
         switch (event.target.id) {
             case "html":
                 gameSelection.current = data.html;
@@ -117,6 +118,7 @@ const DragDrop = () => {
             default:
                 break;
         }
+        setDisplayGame("block");
         setTimeout(() => {
             dragDrop.current.scrollIntoView();
         }, 1)
@@ -230,7 +232,7 @@ const DragDrop = () => {
             };
         })
         setDragDisplay(dragEndDisplay);
-        
+
     }
     function drop(event) {
         // sử dụng event.dataTransfer.getData() để lấy giá trị của vật được thả từ bộ nhớ tạm,
@@ -286,16 +288,13 @@ const DragDrop = () => {
         };
     };
 
-    useEffect(() => {
-        console.log(wordNum);
-    }, [wordNum])
     // nếu điền hết thì hiện nút continue chuyển màn chơi tiếp
     useEffect(() => {
         let count = 0;
         for (let i = 0; i < wordNum; i++) {
-            if (dragDisplay[i] === "none" ){
+            if (dragDisplay[i] === "none") {
                 setCount(count++)
-            } else if (count === 0 ){
+            } else if (count === 0) {
                 setCount(0);
             } else {
                 setCount(count--);
@@ -306,11 +305,15 @@ const DragDrop = () => {
         } else {
             setNextDisplay("none");
         }
-    },[dragDisplay, wordNum, count])
+    }, [dragDisplay, wordNum, count])
+
+    useEffect(() => {
+        console.log(wordNum);
+    }, [wordNum])
 
     function nextStage() {
         if (wordNum < longestDataLength.current - 2) {
-            // setWordNum(wordNum + 2);
+            // setWordNum((prev) => prev + 2 );
             GamePlay();
         } else {
             alert("Bạn đã hoàn thành xuất sắc trò chơi này rồi!");
@@ -352,6 +355,7 @@ const DragDrop = () => {
                 <div className="game-infor">
                     <h1 className="heading1">Kéo và thả - Drag and drop</h1>
                     <p className="center"></p>
+                    <h3>Số từ ở màn chơi này: {wordNum}</h3>
                     {/* <CountDownClock/> */}
                 </div>
                 <div className="game-area">
