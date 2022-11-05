@@ -7,6 +7,7 @@ export const Drag = (props) => {
 }
 
 export const Drop = (props) => {
+    
     return (
         <p className="meaning" style={{ display: props.display }}>
             <span className="blank" id={props.id} name={props.name} onDragOver={props.dragOver} onDrop={props.drop}>{props.children}</span>

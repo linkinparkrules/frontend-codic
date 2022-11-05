@@ -6,25 +6,29 @@ import { randomDataFlex } from "./randomData";
 
 const Bug = () => {
     useEffect(() => {
-        
-        // // fire.childNodes[0].style.color = "yellow"
-        // console.log(fire.childNodes[0].style);    
-        
         setBugSetup({
             display: "flex",
             justifyContent: "flex-end",
         })
     }, [])
-
+    let fire = document.getElementById("fire");
     const [bugSetup, setBugSetup] = useState({});
     const [fireSetup, setFireSetup] = useState({});
+    const [displayBugFire, setDisplayBugFire] = useState("none")
 
     function changeBugSetup() {
         console.log("change stage");
-        // setBugSetup({
-
-        // })
-        console.log(randomDataFlex.flexDirection[Math.floor(Math.random()*randomDataFlex.flexDirection.length)]);
+        fire.style = "";
+        if (displayBugFire === "none") {
+            setDisplayBugFire("block");
+        }
+        setBugSetup({
+            display: randomDataFlex.display,
+            flexDirection: randomDataFlex.flexDirection[Math.floor(Math.random() * randomDataFlex.flexDirection.length)],
+            justifyContent: randomDataFlex.justifyContent[Math.floor(Math.random() * randomDataFlex.justifyContent.length)],
+            alignItems: randomDataFlex.alignItems[Math.floor(Math.random() * randomDataFlex.alignItems.length)]
+        })
+        // console.log(randomDataFlex.flexDirection[Math.floor(Math.random() * randomDataFlex.flexDirection.length)]);
     }
 
     return (
@@ -38,19 +42,19 @@ const Bug = () => {
             <div id="gameScreen">
                 <GameArea id="gameArea" character="bug" style={bugSetup}>
                     <i style={{ color: "rgb(247, 102, 102)" }} className="fa-solid fa-bug"></i>
-                    <i style={{ color: "rgb(238, 238, 98)" , display: "none"}} className="fa-solid fa-bug"></i>
-                    <i style={{ color: "lightgreen" , display: "none"}} className="fa-solid fa-bug"></i>
+                    <i style={{ color: "rgb(238, 238, 98)", display: displayBugFire }} className="fa-solid fa-bug"></i>
+                    <i style={{ color: "lightgreen", display: displayBugFire }} className="fa-solid fa-bug"></i>
                 </GameArea>
                 <GameArea id="gameArea2" character="fire" style={fireSetup}>
                     <i style={{ color: "red" }} className="fa-solid fa-fire"></i>
-                    <i style={{ color: "yellow", display: "none" }} className="fa-solid fa-fire"></i>
-                    <i style={{ color: "green", display: "none" }} className="fa-solid fa-fire"></i>
+                    <i style={{ color: "yellow", display: displayBugFire }} className="fa-solid fa-fire"></i>
+                    <i style={{ color: "green", display: displayBugFire }} className="fa-solid fa-fire"></i>
                     {/* <i style={{ color: "rgb(247, 102, 102)" }} className="fa-solid fa-fire-flame-curved"></i> */}
                 </GameArea>
             </div>
             <div id="codeScreen">
                 <p id="task" className="text22"></p>
-                <TextArea fireSetup={setFireSetup} bugSetup={changeBugSetup}/>
+                <TextArea fireSetup={setFireSetup} newStageBugSetup={changeBugSetup} bugSetting={bugSetup} />
             </div>
         </div>
 
