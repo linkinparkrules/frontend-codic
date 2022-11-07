@@ -101,7 +101,11 @@
         font-size: 20px;
     }
 
-    .lets-contact > h2, p{
+    .lets-contact > h2{
+        display: none;
+    }
+
+    .lets-contact > p{
         display: none;
     }
 
