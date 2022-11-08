@@ -1,29 +1,55 @@
 import { Container, HtmlTag, CssTag, JsTag } from "./Container";
 import './Element.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import http from '../../Utils/Axios';
 
 const Element = () => {
     const [tag, setTag] = useState();
+    const previousIdTarget = useRef();
     useEffect(() => {
         http.get('/exercise/element')
             .then((res) => {
                 setTag(res.data);
-            });
+            }).catch((err) => {
+                console.log(err.message);
+            })
     }, [])
+    
+    // sử dụng useEffect + addEventListener để chạy event "nếu bấm ngoài nút button"
+    useEffect(() => {
+        function clickOutsideButton(event) {
+            if (!event.target.matches(".element-item")) {
+                const prevId = document.getElementById(previousIdTarget.current);
+                if (prevId) {
+                    prevId.classList.remove("show");
+                }
+            }
+        }
+        document.addEventListener("click", clickOutsideButton);
+        return () => {
+            document.removeEventListener("click", clickOutsideButton)
+        }
+    })
 
     if (!tag) {
-        return <h1 style={{ margin: "auto", height: "100%" }}>
-            Loading... {"(Chờ tý đi, kiến thức không vội vã được đâu!)"}
-        </h1>
+        return <div className="elementLoading" style={{ backgroundImage: `linear-gradient(to bottom right, #${Math.floor(Math.random() * 16777215).toString(16)}, #${Math.floor(Math.random() * 16777215).toString(16)})` }}>
+            <div>
+            Loading...
+            </div>
+        </div>
     }
 
     function handleClick(event) {
-        const js = document.getElementById(event.target.value);
-        js.classList.toggle("show");
+        const prevId = document.getElementById(previousIdTarget.current);
+        // nếu prevId trả kết quả null thì ko chạy remove show (lần bấm nút đầu tiên)
+        if (prevId) {
+            prevId.classList.remove("show");
+        }
+        const idTarget = document.getElementById(event.target.value);
+        idTarget.classList.toggle("show");
+        previousIdTarget.current = event.target.value;
     }
 
-    
     return (
         <>
             <Container heading="Thẻ HTML">

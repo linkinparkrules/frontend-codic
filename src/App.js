@@ -8,6 +8,8 @@ import SignUp from './Pages/SignUp';
 import Exercise from './Pages/Exercise';
 import Dictionary from './Pages/Dictionary';
 import Element from './Pages/Element';
+import Bug from './Pages/Game/Bug';
+import DragDrop from './Pages/Game/Dragdrop';
 import Contact from './Pages/Contact';
 import NotFound from './NotFound';
 import BackToTop from './BackToTop'
@@ -25,18 +27,12 @@ function App() {
       return;
     }
     // before access this api, the request interceptor run first. Check './Utils/Axios'
-        // first way to write:
-    // const getProfile = async () => {
-    //   const response = await http.get('/profile/me')
-    //     console.log(response);
-    //     setUser(response.data)
-    // }
-    // getProfile();
-        // second way to write
     http.get('/profile/me')
       .then((response) => {
         // console.log(response.data);
         setUser(response.data);
+      }).catch((err) => {
+        console.log(err.message);
       })
   },[]);
 
@@ -53,6 +49,8 @@ function App() {
           <Route path='/exercise' element={<Exercise />} />
           <Route path='/exercise/dictionary' element={<Dictionary />} />
           <Route path='/exercise/element' element={<Element />} />
+          <Route path='/exercise/bug' element={<Bug />} />
+          <Route path='/exercise/dragdrop' element={<DragDrop />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />

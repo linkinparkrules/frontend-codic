@@ -105,3 +105,142 @@ a {
     transition-duration: 0.3s;
 }
 
+.nav-bar-btn {
+    display: none;
+}
+
+.nav-mobile-checkbox {
+    display: none;
+}
+
+.overlay-mobile {
+    display: none;
+    opacity: 0.5;
+    background-color: whitesmoke;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.menu-mobile {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 320px;
+    max-width: 100%;
+    background-color: white;
+    transform: translateX(100%);
+}
+
+.nav-bar-close {
+    display: none;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+
+/*Tablet: width >= 768px and width < 1024px*/
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    /* NAVIGATION BAR */
+    .menu {
+        display: none;
+    }
+
+    .nav-bar-btn {
+        display: block;
+    }
+
+    .nav-mobile-checkbox:checked~.overlay-mobile {
+        display: block;
+    }
+
+    .nav-mobile-checkbox:checked~.menu-mobile {
+        transform: translateX(-10%);
+    }
+
+    .nav-bar-close {
+        display: block;
+    }
+
+    .menu-mobile {
+        display: flex;
+        flex-direction: column;
+        padding-top: 5%;
+        z-index: 2;
+    }
+
+    .menu-item>a {
+        font-size: 14px;
+    }
+
+    .menu-item:hover {
+        border-radius: 0;
+        transform: scale(1);
+    }
+
+    .menu-item.active {
+        background-color: #DB6400;
+    }
+
+    .logo {
+        width: 30%;
+        text-align: left;
+    }
+
+    .logo>a {
+        font-size: 32px;
+    }
+
+    .logo-image {
+        width: 30px;
+    }
+
+
+    /* BUTTON TO SCROLL TOP */
+    .top-btn {
+        bottom: 5px;
+        right: 5px;
+        font-size: 8px;
+        padding: 17px 17px 10px;
+    }
+
+}
+
+
+/* Mobile: width < 768px */
+@media only screen and (max-width: 768px) {
+
+    /* NAVIGATION BAR */
+    .menu {
+        display: none;
+    }
+
+    .logo {
+        width: none;
+        text-align: left;
+    }
+
+    .logo>a {
+        font-size: 16px;
+    }
+
+    .logo-image {
+        width: 20px;
+    }
+
+    .menu-item {
+        display: block;
+    }
+
+    /* BUTTON TO SCROLL TOP */
+    .top-btn {
+        bottom: 5px;
+        right: 5px;
+        font-size: 8px;
+        padding: 17px 17px 10px;
+    }
+}

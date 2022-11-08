@@ -5,8 +5,6 @@
     font-family: Montserrat Reg;
 }
 
-@media only screen and (min-width: 1024px){
-    
 .log-in {
     background-image: url(../../Asset/Background/log\ in\ bgr.jpg);
     background-size: cover;
@@ -14,7 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 89vh;
+    height: 100vh;
 }
 
 .login-password-messenger {
@@ -168,196 +166,33 @@
 .login-channel-icon>li>i {
     font-size: 30px;
 }
-}
 
-@media only screen and (max-width: 1024px){
+
+/*Tablet: width >= 768px and width < 1024px*/
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    
     .login-img-bottom {
-        bottom: 50px;
-        left: 50px;
-        width: 150px;
-    }
-    
-    .login-img-top {
-        top: 50px;
-        right: 50px;
-        width: 150px;
-    }
-    .log-in > img{
-        display: none;
-    }
-    .login-content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 70%;
-        height: 100vh;
-        background-color: rgba(255, 255, 255, 0.521);
-        border-radius: 18px;
-    }
-    .login-form {
-        padding: 20px;
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .login-form>h2 {
-        color: #607d8b;
-        font-weight: 500;
-        font-size: 1.5em;
-        text-transform: uppercase;
-        margin-bottom: 20px;
-        border-bottom: 4px solid orangered;
-        letter-spacing: 1px;
-    }
-    
-    .login-input-form {
-        margin-bottom: 20px;
-    }
-    
-    .login-input-form span {
-        font-size: 16px;
-        margin-bottom: 5px;
-        display: inline-block;
-        color: #607db8;
-        letter-spacing: 1px;
-    
-    }
-    
-    .login-input-form input {
-        width: 100%;
-        padding: 10px 20px;
-        outline: none;
-        border: 1px solid #607d8b;
-        font-size: 16px;
-        letter-spacing: 1px;
-        color: #607d8b;
-        background: transparent;
-        border-radius: 30px;
-    
-    }
-    
-    .login-input-form input[type="submit"] {
-        background: rgb(255, 121, 44);
-        color: black;
-        outline: none;
-        border: none;
-        font-weight: 500;
-        cursor: pointer;
-        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12),
-            0 2px 2px rgba(0, 0, 0, 0.12),
-            0 4px 4px rgba(0, 0, 0, 0.12),
-            0 8px 8px rgba(0, 0, 0, 0.12),
-            0 16px 16px rgba(0, 0, 0, 0.12);
-    }
-    
-    .login-input-form input[type="submit"]:hover {
-        background: orangered;
-        color: white;
-    }
-    
-    .login-remember-info {
-        margin-bottom: 10px;
-        color: #607d8b;
-        font-size: 14px;
-    }
-    
-    .login-input-form>p {
-        color: #607d8b;
-    }
-    
-    .login-input-form>p>a {
-        color: orangered;
-    }
-    
-    .login-form>h3 {
-        color: #607d8b;
-        text-align: center;
-        margin: 50px 0 10px;
-        font-weight: 500;
-    }
-    
-    .login-channel-icon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .login-channel-icon>li {
-        list-style: none;
-        cursor: pointer;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .login-channel-icon>li:nth-child(1) {
-        color: #3b5999;
-    }
-    
-    .login-channel-icon>li:nth-child(2) {
-        color: #dd4b39;
-    }
-    
-    .login-channel-icon>li>i {
-        font-size: 30px;
-    }
-}
-
-@media only screen and (max-width: 768px){
-    .log-in {
-        background-image: url(../../Asset/Background/log\ in\ bgr.jpg);
-        background-size: cover;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-    }
-    /* .login-img-bottom {
         bottom: 10px;
-        left: 10px;
-        width: 80px;
+        left: 20px;
+        width: 180px;
     }
     
     .login-img-top {
-        top: 20px;
+        top: 10px;
         right: 20px;
-        width: 80px;
-    } */
-     
-    .log-in > img{
-        display: none;
+        width: 180px;
     }
-    .login-content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 70%;
-        height: 100vh;
-        background-color: rgba(255, 255, 255, 0.521);
-        border-radius: 18px;
-    }
+    
     .login-form {
-        padding: 20px;
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        padding: 10px;
+        width: 60%;
     }
     
     .login-form>h2 {
         color: #607d8b;
-        font-weight: 500;
-        font-size: 1.5em;
-        text-transform: uppercase;
-        margin-bottom: 20px;
-        border-bottom: 4px solid orangered;
+        font-size: 1.2em;
+        margin: 20px 0 20px;
+        border-bottom: 3px solid orangered;
         letter-spacing: 1px;
     }
     
@@ -365,93 +200,98 @@
         margin-bottom: 20px;
     }
     
-    .login-input-form span {
-        font-size: 16px;
-        margin-bottom: 5px;
-        display: inline-block;
-        color: #607db8;
+    .login-input-form label {
+        font-size: 14px;
         letter-spacing: 1px;
     
     }
     
     .login-input-form input {
         width: 100%;
-        padding: 10px 20px;
-        outline: none;
-        border: 1px solid #607d8b;
-        font-size: 16px;
-        letter-spacing: 1px;
-        color: #607d8b;
-        background: transparent;
-        border-radius: 30px;
-    
-    }
-    
-    .login-input-form input[type="submit"] {
-        background: rgb(255, 121, 44);
-        color: black;
-        outline: none;
-        border: none;
-        font-weight: 500;
-        cursor: pointer;
-        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12),
-            0 2px 2px rgba(0, 0, 0, 0.12),
-            0 4px 4px rgba(0, 0, 0, 0.12),
-            0 8px 8px rgba(0, 0, 0, 0.12),
-            0 16px 16px rgba(0, 0, 0, 0.12);
-    }
-    
-    .login-input-form input[type="submit"]:hover {
-        background: orangered;
-        color: white;
-    }
-    
-    .login-remember-info {
-        margin-bottom: 10px;
-        color: #607d8b;
+        padding: 10px 15px;
         font-size: 14px;
+        letter-spacing: 1px;
     }
     
-    .login-input-form>p {
-        color: #607d8b;
-    }
-    
-    .login-input-form>p>a {
-        color: orangered;
+    .login-remember-info > label{
+        padding-left: 5px;
     }
     
     .login-form>h3 {
-        color: #607d8b;
-        text-align: center;
-        margin: 50px 0 10px;
-        font-weight: 500;
-    }
-    
-    .login-channel-icon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        margin: 0 0 10px;
+        font-size: 16px;
     }
     
     .login-channel-icon>li {
-        list-style: none;
-        cursor: pointer;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        width: 40px;
+        height: 40px;
     }
     
-    .login-channel-icon>li:nth-child(1) {
-        color: #3b5999;
+    .login-input-form > p {
+        text-align: center;
     }
     
-    .login-channel-icon>li:nth-child(2) {
-        color: #dd4b39;
+}
+    
+/* Mobile: width < 768px */
+@media only screen and (max-width: 768px) {
+    .login-img-bottom {
+        display: none;
     }
     
-    .login-channel-icon>li>i {
-        font-size: 30px;
+    .login-img-top {
+        display: none;
+    }
+
+    .login-content {
+        width: 90%;
+    }
+    
+    .login-form {
+        padding: 10px;
+        width: 90%;
+    }
+    
+    .login-form>h2 {
+        color: #607d8b;
+        font-size: 1.2em;
+        margin: 20px 0 20px;
+        border-bottom: 3px solid orangered;
+        letter-spacing: 0px;
+    }
+    
+    .login-input-form {
+        margin-bottom: 20px;
+    }
+
+    .login-input-form > p {
+        text-align: center;
+    }
+    
+    .login-input-form label {
+        font-size: 14px;
+        letter-spacing: 0px;
+    
+    }
+    
+    .login-input-form input {
+        width: 100%;
+        padding: 10px 15px;
+        font-size: 14px;
+        letter-spacing: 0px;
+    }
+    
+    .login-remember-info > label{
+        padding-left: 5px;
+    }
+    
+    .login-form>h3 {
+        margin: 0 0 10px;
+        font-size: 16px;
+    }
+    
+    .login-channel-icon>li {
+        width: 40px;
+        height: 40px;
     }
 }
