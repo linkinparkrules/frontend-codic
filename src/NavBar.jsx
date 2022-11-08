@@ -33,14 +33,14 @@ const NavBar = () => {
                 <MenuItem link="/exercise" linkName="Học tập" />
                 <MenuItem link="/contact" linkName="Liên hệ" />
                 {loginCtx.user ?
+                    <Link to="/" onClick={handleLogout}>Đăng xuất</Link>
+                    : <MenuItem link="/signup" linkName="Đăng ký" />
+                }
+                {loginCtx.user ?
                     <div style={{ color: `#${randomColor2}`, textAlign: "center" }}>Welcome, <br />
                         <div style={{ textTransform: "uppercase", color: `#${randomColor}` }}>{loginCtx.user.username}</div>
                     </div>
                     : <MenuItem link="/login" linkName="Đăng nhập" />
-                }
-                {loginCtx.user ?
-                    <Link to="/" onClick={handleLogout}>Đăng xuất</Link>
-                    : <MenuItem link="/signup" linkName="Đăng ký" />
                 }
 
             </div>
@@ -68,12 +68,12 @@ const NavBar = () => {
                     : <MenuItem link="/login" linkName="Đăng nhập" />
                 }
                 {loginCtx.user ?
-                    <Link to="/" onClick={handleLogout}>Đăng xuất</Link>
+                    <div className='menu-item'><Link to="/" onClick={handleLogout}>Đăng xuất</Link></div>
+                    
                     : <MenuItem link="/signup" linkName="Đăng ký" />
                 }
 
             </div>
-            <hr />
         </div>
     );
 };
