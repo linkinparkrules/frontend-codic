@@ -79,7 +79,6 @@ body {
     background-image: url(../../../Asset/Background/dragdrop\ bgr.jpg);
     background-size: cover;
     height: 100vh;
-    display: none;
 }
 
 .game-infor {
@@ -163,6 +162,36 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 30px;
+}
+
+/* nút quay lại màn hình chọn trò chơi */
+#backToChoose {
+    margin: 10px;
+    border-radius: 8px;
+    margin: 10px;
+    font-size: 30px;
+    background-color: #dab71b;
+    border-color: rgba(0, 0, 0, 0.603);
+    color: black;
+    transition-duration: 0.4s;
+    padding: 5px 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12),
+        0 2px 2px rgba(0, 0, 0, 0.12),
+        0 4px 4px rgba(0, 0, 0, 0.12),
+        0 8px 8px rgba(0, 0, 0, 0.12),
+        0 16px 16px rgba(0, 0, 0, 0.12);
+}
+
+#backToChoose:hover {
+    background-color: #db1f1f;
+    color: black;
+    transform: translateY(8px);
+    transition: ease-out;
+    transition-duration: 0.3s;
+}
+
+#backToChoose:active {
+    transform: translateY(1.5px);
 }
 
 /* nút chuyển màn chơi tiếp theo */

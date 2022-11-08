@@ -5,13 +5,13 @@ import UserContext from './Context';
 import "./App.css"
 
 const navBarClassName = (navBarStatus) => {
-    return navBarStatus.isActive? "menu-item-active" : "menu-item-inactive";
+    return navBarStatus.isActive ? "menu-item-active" : "menu-item-inactive";
 };
 
 const NavBar = () => {
     const loginCtx = useContext(UserContext);
-    let randomColor = Math.floor(Math.random()*16777215).toString(16);
-    let randomColor2 = Math.floor(Math.random()*16777215).toString(16);
+    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    let randomColor2 = Math.floor(Math.random() * 16777215).toString(16);
 
     const handleLogout = () => {
         loginCtx.setUser(null);
@@ -24,7 +24,7 @@ const NavBar = () => {
             <div className="logo">
                 <Link to="/home">
                     <img className="logo-image" src={codicLogo} alt="Từ điển lập trình" />
-                        Codic
+                    Codic
                 </Link>
             </div>
             <div className="menu">
@@ -32,19 +32,20 @@ const NavBar = () => {
                 <MenuItem link="/introduction" linkName="Giới thiệu" />
                 <MenuItem link="/exercise" linkName="Học tập" />
                 <MenuItem link="/contact" linkName="Liên hệ" />
-                {loginCtx.user ? 
-                    <div style={{color: `#${randomColor2}`, textAlign: "center"}}>Welcome, <br />
-                        <div style={{textTransform: "uppercase", color: `#${randomColor}`}}>{loginCtx.user.username}</div>
-                    </div> 
+                {loginCtx.user ?
+                    <div style={{ color: `#${randomColor2}`, textAlign: "center" }}>Welcome, <br />
+                        <div style={{ textTransform: "uppercase", color: `#${randomColor}` }}>{loginCtx.user.username}</div>
+                    </div>
                     : <MenuItem link="/login" linkName="Đăng nhập" />
                 }
-                {loginCtx.user ? 
-                    <Link to="/" onClick={handleLogout}>Đăng xuất</Link> 
+                {loginCtx.user ?
+                    <div className="menu-item" >
+                        <Link to="/" onClick={handleLogout}>Đăng xuất</Link>
+                    </div>
                     : <MenuItem link="/signup" linkName="Đăng ký" />
                 }
-                
+
             </div>
-            <hr />
         </div>
     );
 };
