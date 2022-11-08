@@ -33,15 +33,43 @@ const NavBar = () => {
                 <MenuItem link="/exercise" linkName="Học tập" />
                 <MenuItem link="/contact" linkName="Liên hệ" />
                 {loginCtx.user ?
+                    <Link to="/" onClick={handleLogout}>Đăng xuất</Link>
+                    : <MenuItem link="/signup" linkName="Đăng ký" />
+                }
+                {loginCtx.user ?
+                    <div style={{ color: `#${randomColor2}`, textAlign: "center" }}>Welcome, <br />
+                        <div style={{ textTransform: "uppercase", color: `#${randomColor}` }}>{loginCtx.user.username}</div>
+                    </div>
+                    : <MenuItem link="/login" linkName="Đăng nhập" />
+                }
+
+            </div>
+
+            <label htmlFor="nav-mobile-checkbox" className='nav-bar-btn'>
+                <i class="fa-solid fa-bars"></i>
+            </label>
+
+            <input type="checkbox" className='nav-mobile-checkbox' id='nav-mobile-checkbox' />
+
+            <label htmlFor="nav-mobile-checkbox" className='overlay-mobile'></label>
+
+            <div className="menu-mobile">
+                <label htmlFor="nav-mobile-checkbox" className='nav-bar-close'>
+                    <i className="fa-solid fa-xmark" />
+                </label>
+                <MenuItem link="/home" linkName="Trang chủ" />
+                <MenuItem link="/introduction" linkName="Giới thiệu" />
+                <MenuItem link="/exercise" linkName="Học tập" />
+                <MenuItem link="/contact" linkName="Liên hệ" />
+                {loginCtx.user ?
                     <div style={{ color: `#${randomColor2}`, textAlign: "center" }}>Welcome, <br />
                         <div style={{ textTransform: "uppercase", color: `#${randomColor}` }}>{loginCtx.user.username}</div>
                     </div>
                     : <MenuItem link="/login" linkName="Đăng nhập" />
                 }
                 {loginCtx.user ?
-                    <div className="menu-item" >
-                        <Link to="/" onClick={handleLogout}>Đăng xuất</Link>
-                    </div>
+                    <div className='menu-item'><Link to="/" onClick={handleLogout}>Đăng xuất</Link></div>
+                    
                     : <MenuItem link="/signup" linkName="Đăng ký" />
                 }
 

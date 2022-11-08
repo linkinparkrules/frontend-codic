@@ -1,6 +1,6 @@
 export const Container = (props) => {
     return (
-        <div className="element-container">
+        <div>
             <h1 className="heading1">
                 {props.heading}
             </h1>

@@ -105,14 +105,69 @@ a {
     transition-duration: 0.3s;
 }
 
+.nav-bar-btn {
+    display: none;
+}
+
+.nav-mobile-checkbox {
+    display: none;
+}
+
+.overlay-mobile {
+    display: none;
+    opacity: 0.5;
+    background-color: grey;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.menu-mobile {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 320px;
+    max-width: 100%;
+    background-color: white;
+    transform: translateX(100%);
+}
+
+.nav-bar-close {
+    display: none;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+
 /*Tablet: width >= 768px and width < 1024px*/
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-    
+
     /* NAVIGATION BAR */
     .menu {
-        width: 70%;
+        width: 700px;
     }
-
+    
+    .menu-item {
+        padding: 8px;
+    }
+    
+    .menu-item>a {
+        font-size: 18px;
+    }
+    
+    .menu-item:hover {
+        background-color: #a8c9f8;
+        border-radius: 8px;
+        transform: scale(1.1);
+        transition: ease-out;
+        transition-duration: 0.3s;
+    }
+    
     .logo {
         width: 30%;
         text-align: left;
@@ -143,24 +198,60 @@ a {
 
     /* NAVIGATION BAR */
     .menu {
-        width: 80%;
+        display: none;
+    }
+
+    .nav-bar-btn {
+        display: block;
+    }
+
+    .nav-mobile-checkbox:checked~.overlay-mobile {
+        display: block;
+    }
+
+    .nav-mobile-checkbox:checked~.menu-mobile {
+        transform: translateX(0%);
+    }
+
+    .nav-bar-close {
+        display: block;
+    }
+
+    .menu-mobile {
+        display: flex;
+        flex-direction: column;
+        padding-top: 5%;
+        z-index: 1000;
+    }
+
+    .menu-item>a {
+        font-size: 14px;
+    }
+
+    .menu-item:hover {
+        border-radius: 0;
+        transform: scale(1);
+    }
+
+    .menu-item.active {
+        background-color: #DB6400;
     }
 
     .logo {
-        width: 20%;
+        width: none;
         text-align: left;
     }
 
     .logo>a {
-        font-size: 28px;
+        font-size: 16px;
     }
 
     .logo-image {
-        width: 30px;
+        width: 20px;
     }
 
     .menu-item {
-        display: none;
+        display: block;
     }
 
     /* BUTTON TO SCROLL TOP */
