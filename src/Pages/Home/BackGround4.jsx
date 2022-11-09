@@ -28,7 +28,7 @@ const BackGround4 = () => {
                 </Cards>
                 <Images className="row3-4 col3-4" src={exercise3} alt="Học code" />
             </div>
-            <Buttons className="btn-white" dataAos="fade-up" dataAosDuration="1000">
+            <Buttons className="btn-white" dataAos="fade-up" dataAosDuration="1000" to="/exercise">
                 Học ngay
                 <i className="fa-solid fa-angles-right"></i>
             </Buttons>

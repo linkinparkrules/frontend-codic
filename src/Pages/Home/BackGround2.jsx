@@ -34,7 +34,7 @@ const BackGround2 = () => {
                         <Numbers h2="Xúc tích, dễ hiểu" p="Cách giải thích ngắn gọn giúp lập trình viên rút ngắn thời gian tìm hiểu từ." />
                     </Images>
                 </div>
-                <Buttons className="btn-white" dataAos="fade-up" dataAosDuration="1500" to="/dictionary">
+                <Buttons className="btn-white" dataAos="fade-up" dataAosDuration="1500" to="/exercise/dictionary">
                     Học ngay
                     <i className="fa-solid fa-angles-right"></i>
                 </Buttons>

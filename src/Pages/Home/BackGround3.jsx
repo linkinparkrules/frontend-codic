@@ -37,7 +37,7 @@ const BackGround3 = () => {
                     </Cards>
                 </div>
             </div>
-            <Buttons className="btn-white" dataAos="fade-up" dataAosDuration="1000">
+            <Buttons className="btn-white" dataAos="fade-up" dataAosDuration="1000" to="/exercise/element">
                     Học ngay
                     <i className="fa-solid fa-angles-right"></i>
             </Buttons>
