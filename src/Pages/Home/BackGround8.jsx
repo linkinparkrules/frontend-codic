@@ -1,5 +1,5 @@
 import './BackGround.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import footerimg1 from "../../Asset/Background/footerimg1.jpg"
 import footerimg2 from "../../Asset/Background/footerimg2.jpg"
 import footerimg3 from "../../Asset/Background/footerimg3.jpg"
@@ -30,9 +30,9 @@ const BackGround8 = () => {
             <div className="contact-footer">
                 <p>Contact us</p>
                 <div className="channel">
-                    <i onClick={() => navigate('https://www.facebook.com/Linkinllica/', { replace: true })} className="fa-brands fa-facebook-square fa-2x"></i>
-                    {/* <Link to="https://www.facebook.com/Linkinllica/" target="_blank"><i className="fa-brands fa-facebook-square fa-2x"></i></Link> */}
-                    <Link to="https://www.instagram.com/_ncao97/" target="_blank"><i className="fa-brands fa-instagram fa-2x"></i></Link>
+                    {/* <i onClick={() => navigate('https://www.facebook.com/Linkinllica/')} className="fa-brands fa-facebook-square fa-2x"></i> */}
+                    <a href="https://www.facebook.com/Linkinllica/" target="_blank"><i className="fa-brands fa-facebook-square fa-2x"></i></a>
+                    <a href="https://www.instagram.com/_ncao97/" target="_blank"><i className="fa-brands fa-instagram fa-2x"></i></a>
                     <Link to="mailto: hungandthaifriend@gmail.com" target="_blank"><i className="fa-solid fa-envelope fa-2x"></i></Link>
                     <Link to="tel: 1900561252"><i className="fa-solid fa-phone fa-2x"></i></Link>
                 </div>
