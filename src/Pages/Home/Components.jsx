@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export const Numbers = (props) => {
     return (
-        <div>
+        <div className={props.className}>
             <h2>{props.h2}</h2>
             <p>{props.p}</p>
         </div>

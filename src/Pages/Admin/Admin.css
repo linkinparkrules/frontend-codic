@@ -1,0 +1,43 @@
+.feedback-admin {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.377);
+    border-left: 3px solid rgb(250, 73, 73);
+}
+
+.feedback-admin > h2 {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.feedback-admin > p {
+    padding: 10px;
+    font-size: 20px;
+}
+
+/*Tablet: width >= 768px and width < 1024px*/
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .feedback-admin > h2 {
+        font-size: 20px;
+    }
+    
+    .feedback-admin > p {
+        font-size: 18px;
+    }
+}
+
+/* Mobile: width < 768px */
+@media only screen and (max-width: 768px) {
+    .feedback-admin > h2 {
+        font-size: 18px;
+        padding: 5px;
+    }
+    
+    .feedback-admin > p {
+        padding: 5px;
+        font-size: 16px;
+    }
+}
