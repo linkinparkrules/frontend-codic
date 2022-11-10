@@ -1,22 +1,33 @@
 import { useDrag } from 'react-dnd';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 
-const Drag = ({ value }) => {
-  const [text, setText] = useState(value.name);
+const Drag = ({ value, count }) => {
+  const [display, setDisplay] = useState("inline");
 
-  const [collected, drag, dragPreview] = useDrag(() => ({
+  const [collected, drag] = useDrag(() => ({
     type: value._id,
     item: value,
     end: (item, monitor) => {
       // console.log(JSON.stringify(item));
-      // console.log(monitor);
-      
-    }
+      // console.log(monitor.didDrop());
+      const dropResult = monitor.getDropResult();
+      if (item && dropResult) {
+        setDisplay("none");
+        count((prev) => prev + 1)
+      }
+    },
+    collect: (monitor) => ({
+      isDragging: monitor.isDragging(),
+    })
   }))
-
+  const opacity = collected.isDragging ? 0.4 : 1;
   return (
-    <p className="css" ref={drag}>
-      {text}
+    <p
+      className="css"
+      style={{ opacity, cursor: "pointer", display: display }}
+      ref={drag}
+    >
+      {value.name}
     </p>
   );
 };

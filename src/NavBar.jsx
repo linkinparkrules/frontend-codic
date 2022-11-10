@@ -50,7 +50,7 @@ const NavBar = () => {
             </div>
 
             <label htmlFor="nav-mobile-checkbox" className='nav-bar-btn'>
-                <i class="fa-solid fa-bars"></i>
+                <i className="fa-solid fa-bars"></i>
             </label>
 
             <input type="checkbox" className='nav-mobile-checkbox' id='nav-mobile-checkbox' />
