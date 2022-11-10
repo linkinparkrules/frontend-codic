@@ -4,6 +4,7 @@ import selection from '../../../Asset/Background/selection.jpg';
 import http from "../../../Utils/Axios";
 import Game from "./GameTitle";
 import { CountDownClock } from "./CountDownClock";
+import AuthAccess from "../../../Context/AuthContext";
 
 const DragDrop = () => {
   // lưu trữ data lấy từ database
@@ -66,7 +67,7 @@ const DragDrop = () => {
   };
 
   return (
-    <>
+    <AuthAccess mode="message">
       {displayGame ? (
         <Game
           setDisplayGame={setDisplayGame}
@@ -89,7 +90,7 @@ const DragDrop = () => {
           <img src={selection} alt="Ảnh trò chơi" />
         </div>
       )}
-    </>
+    </AuthAccess>
   );
 };
 

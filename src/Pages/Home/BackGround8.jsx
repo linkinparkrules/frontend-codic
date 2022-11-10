@@ -4,20 +4,14 @@ import footerimg1 from "../../Asset/Background/footerimg1.jpg"
 import footerimg2 from "../../Asset/Background/footerimg2.jpg"
 import footerimg3 from "../../Asset/Background/footerimg3.jpg"
 import footerimg4 from "../../Asset/Background/footerimg5.jpg"
+import BackGround1 from '../Contact/BackGround1';
 
 const BackGround8 = () => {
     return (
         <div className="footer">
-            <div className="collect-feedback">
+            <BackGround1 className="collect-feedback" placeholderMessage="Nhập ý kiến của bạn" >
                 <p>Đóng góp ý kiến</p>
-                <form id="contact" className="enter-feedback">
-                    <label>Email của bạn:</label><br />
-                    <input type="email" id="email" name="email" placeholder="SamSmith@gmail.com" /><br />
-                    <label>Góp ý:</label><br />
-                    <input type="text" id="feedBack" name="feedBack" placeholder="Nhập ý kiến của bạn" /><br />
-                    <input type="submit" value="Gửi" />
-                </form>
-            </div>
+            </BackGround1>
             <div className="footer-infor">
                 <Link to="/home">Trang chủ</Link>
                 <Link to="/introduction">Giới thiệu</Link>
