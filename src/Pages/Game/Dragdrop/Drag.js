@@ -1,7 +1,7 @@
 import { useDrag } from 'react-dnd';
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 
-const Drag = ({ value, count }) => {
+const Drag = ({ value }) => {
   const [display, setDisplay] = useState("inline");
 
   const [collected, drag] = useDrag(() => ({
@@ -13,7 +13,6 @@ const Drag = ({ value, count }) => {
       const dropResult = monitor.getDropResult();
       if (item && dropResult) {
         setDisplay("none");
-        count((prev) => prev + 1)
       }
     },
     collect: (monitor) => ({

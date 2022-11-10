@@ -1,10 +1,16 @@
 import { useState } from "react";
 import GameArea from "./GameArea";
 
-const Game = ({ setDisplayGame, setWordNum, renderData, wordNum, shuffleDrag }) => {
+const Game = ({ setDisplayGame, setWordNum, renderData, wordNum }) => {
   const [continueBtn, setContinueBtn] = useState("none");
   const [retryBtn, setRetryBtn] = useState("none");
-  
+  const [count, setCount] = useState(0);
+
+  function continueClick() {
+    setWordNum((prev) => prev + 2)
+    setCount(0);
+    setContinueBtn("none");
+  }
 
   return (
     <>
@@ -32,6 +38,8 @@ const Game = ({ setDisplayGame, setWordNum, renderData, wordNum, shuffleDrag }) 
           renderData={renderData}
           setContinueBtn={setContinueBtn}
           wordNum={wordNum}
+          count={count}
+          setCount={setCount}
         />
         <div className="btn">
           {/* NÚT CHUYỂN MÀN CHƠI */}
@@ -39,7 +47,7 @@ const Game = ({ setDisplayGame, setWordNum, renderData, wordNum, shuffleDrag }) 
             type="button"
             id="nextStage"
             style={{ display: continueBtn }}
-            onClick={() => setWordNum((prev) => prev + 2)}
+            onClick={continueClick}
           >Continue
           </button>
           {/* NÚT CHƠI lẠI */}
