@@ -1,17 +1,19 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef, useCallback } from "react";
 import "./DragDrop.css"
 import selection from '../../../Asset/Background/selection.jpg';
 import http from "../../../Utils/Axios";
-import Game from "./Game";
+import Game from "./GameTitle";
 import { CountDownClock } from "./CountDownClock";
+import AuthAccess from "../../../Context/AuthContext";
 
 const DragDrop = () => {
   // lưu trữ data lấy từ database
   const [data, setData] = useState({ html: [], css: [], js: [] });
   const [displayGame, setDisplayGame] = useState(false);
   const [wordNum, setWordNum] = useState(4);
-  const [typeGame, setTypeGame] = useState("html");
-
+  const [typeGame, setTypeGame] = useState();
+  const firstShuffle = useRef([]);
+  const shuffleDrag = useRef([]);
   useEffect(() => {
     http.get("/exercise/element")
       .then((res) => {
@@ -27,8 +29,20 @@ const DragDrop = () => {
   }, [])
 
   const renderData = useMemo(() => {
-    return shuffle(data[typeGame]).slice(0, wordNum);
+    if (!typeGame) {
+      return [];
+    } else {
+      firstShuffle.current = shuffle(data[typeGame]).slice(0, wordNum);
+      return firstShuffle.current;
+    }
   }, [data, typeGame, wordNum])
+
+  // console.log(firstShuffle.current);
+  shuffleDrag.current = useMemo(() => {
+    return shuffle(renderData);
+  },[renderData])
+  console.log(shuffleDrag.current);
+
 
   function showGame(type) {
     setDisplayGame(true);
@@ -53,9 +67,15 @@ const DragDrop = () => {
   };
 
   return (
-    <>
+    <AuthAccess mode="message">
       {displayGame ? (
-        <Game setDisplayGame={setDisplayGame} setWordNum={setWordNum} renderData={renderData}/>
+        <Game
+          setDisplayGame={setDisplayGame}
+          setWordNum={setWordNum}
+          renderData={renderData}
+          // shuffleDrag={shuffleDrag}
+          wordNum={wordNum}
+        />
       ) : (
         <div className="selection">
           <div className="content-selection">
@@ -70,7 +90,7 @@ const DragDrop = () => {
           <img src={selection} alt="Ảnh trò chơi" />
         </div>
       )}
-    </>
+    </AuthAccess>
   );
 };
 
@@ -80,14 +100,14 @@ export function shuffle(array) {
   let currentIndex = array.length,
     randomIndex;
 
-  while(currentIndex !== 0) {
+  while (currentIndex !== 0) {
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
 
     [array[currentIndex], array[randomIndex]] = [
       array[randomIndex], array[currentIndex]
     ]
-  }  
+  }
 
   return array;
 };

@@ -1,0 +1,21 @@
+.authMessage {
+  color: white;
+  height: 89.999vh;
+  font-size: 50px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.goToLoginBtn {
+  width: fit-content;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 8px;
+  text-align: center;
+  margin: 10px auto 50px auto;
+  font-family: Montserrat Reg;
+  font-size: 22px;
+}
