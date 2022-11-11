@@ -5,6 +5,9 @@ const Admin = () => {
     return (
         <>
             <Numbers className="feedback-admin" h2="" p="" />
+            <Numbers className="feedback-admin" h2="" p="" />
+            <Numbers className="feedback-admin" h2="" p="" />
+            <Numbers className="feedback-admin" h2="" p="" />
         </>
     )
 } 
