@@ -10,7 +10,7 @@ const Drop = ({ value, setCount }) => {
       // console.log(item);
       setCount((prev) => prev + 1);
       setText(`${value.name}`);
-      setBlankPadding("5px 0px");
+      setBlankPadding("7px 5px");
       return item;
     }
   }));

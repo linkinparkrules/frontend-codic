@@ -22,7 +22,9 @@ import http from './Utils/Axios';
 
 function App() {
   AOS.init();
+  const [user, setUser] = useState(null);
 
+  // tự đăng nhập nếu có key trong localStorage và sessionStorage
   useEffect(() => {
     if (!localStorage.getItem("jwt") && !sessionStorage.getItem("jwt")) {
       return;
@@ -30,14 +32,14 @@ function App() {
     // before access this api, the request interceptor run first. Check './Utils/Axios'
     http.get('/profile/me')
       .then((response) => {
-        // console.log(response.data);
+        console.log(response.data);
         setUser(response.data);
       }).catch((err) => {
         console.log(err.message);
       })
   },[]);
 
-  const [user, setUser] = useState(null);
+
   return (
     <div className="App">
       <UserContext.Provider value={{user: user, setUser: setUser}}>

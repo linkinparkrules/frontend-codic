@@ -2,7 +2,7 @@ import "./DragDrop.css"
 import { shuffle } from ".";
 import Drag from "./Drag";
 import Drop from "./Drop";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useRef } from "react";
 
 const GameArea = ({ renderData, setContinueBtn, wordNum, count, setCount }) => {
   useEffect(() => {
@@ -10,7 +10,9 @@ const GameArea = ({ renderData, setContinueBtn, wordNum, count, setCount }) => {
       setContinueBtn("block")
     }
   }, [count, wordNum, setContinueBtn])
-  console.log(count);
+
+  const prevWordNum = useRef(wordNum);
+  console.log(prevWordNum.current);
 
   const arrayShuffle = useMemo(() => {
     return shuffle([...Array(renderData.length).keys()]);
@@ -41,5 +43,7 @@ const GameArea = ({ renderData, setContinueBtn, wordNum, count, setCount }) => {
     </div>
   );
 };
+
+
 
 export default GameArea;

@@ -4,7 +4,7 @@ import logInImg2 from "../../Asset/Background/log in img2.jpg";
 import { Link, useNavigate, Navigate } from 'react-router-dom'
 import { useState } from 'react';
 import http from '../../Utils/Axios.js';
-import {useContext} from 'react';
+import { useContext } from 'react';
 import UserContext from '../../Context';
 
 const Login = () => {
@@ -27,7 +27,15 @@ const Login = () => {
             } else {
                 sessionStorage.setItem("jwt", response.data.token);
             }
-            userCtx.setUser(response.data);
+            // console.log(response.data)
+            http.get('/profile/me')
+                .then((response) => {
+                    if (response.data) {
+                        userCtx.setUser(response.data);
+                    }
+                }).catch((err) => {
+                    console.log(err.message);
+                })
             navigate('/home');
         } catch (err) {
             setLoginErr(err.response.data);
@@ -54,7 +62,7 @@ const Login = () => {
     // if user tries to access login, they will be redirected to home instead
     if (userCtx.user) {
         return <Navigate to="/" replace />
-    } 
+    }
 
     return (
         <div className='log-in'>

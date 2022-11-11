@@ -10,6 +10,7 @@ const Game = ({ setDisplayGame, setWordNum, renderData, wordNum }) => {
     setWordNum((prev) => prev + 2)
     setCount(0);
     setContinueBtn("none");
+    setDisplayGame(false);
   }
 
   return (
