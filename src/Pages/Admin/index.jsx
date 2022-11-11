@@ -19,10 +19,12 @@ const Admin = () => {
 
     return (
         <AdminAccess>
-            <h1>ALL FEEDBACK:</h1>
-            {data.map((info) => {
-                return <Numbers className="feedback-admin" key={info._id} h2={info.email} p={info.feedback} />
-            })}
+            <div className='adminStyle'>
+                <h1>LỜI NHẮN VÀ GÓP Ý:</h1>
+                {data.map((info) => {
+                    return <Numbers className="feedback-admin" key={info._id} h2={info.email} p={info.feedback} />
+                })}
+            </div>
         </AdminAccess>
     )
 }
