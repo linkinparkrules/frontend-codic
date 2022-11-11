@@ -1,6 +1,6 @@
 import { NavLink, Link } from 'react-router-dom';
 import codicLogo from './Asset/Icon/codic.png';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import UserContext from './Context';
 import "./App.css"
 
@@ -9,6 +9,7 @@ const navBarClassName = (navBarStatus) => {
 };
 
 const NavBar = () => {
+    const [admin, setAdmin] = useState("none")
     const loginCtx = useContext(UserContext);
     let randomColor = Math.floor(Math.random() * 16777215).toString(16);
     let randomColor2 = Math.floor(Math.random() * 16777215).toString(16);
@@ -18,6 +19,22 @@ const NavBar = () => {
         localStorage.removeItem('jwt');
         sessionStorage.removeItem('jwt');
     }
+
+    useEffect(() => {
+        console.log(loginCtx);
+        // nếu có data thì mới chạy đk isAdmin kia để tránh lỗi
+        if (loginCtx.user) {
+            if (loginCtx.user.isAdmin) {
+                console.log("block");
+                setAdmin("block");
+            }
+        } else {
+            console.log("none");
+            setAdmin("none");
+        }
+    }, [loginCtx])
+
+
 
     return (
         <div className="navi-bar">
@@ -29,6 +46,11 @@ const NavBar = () => {
             </div>
             {/* Navbar for desktop and pad */}
             <div className="menu">
+                <div className="menu-item" style={{ display: admin }}>
+                    <NavLink className={navBarClassName} to="/admin">
+                        Admin
+                    </NavLink>
+                </div>
                 <MenuItem link="/home" linkName="Trang chủ" />
                 <MenuItem link="/introduction" linkName="Giới thiệu" />
                 <MenuItem link="/exercise" linkName="Học tập" />
@@ -78,6 +100,11 @@ const NavBar = () => {
                 <label htmlFor="nav-mobile-checkbox" className='nav-bar-close'>
                     <i className="fa-solid fa-xmark" />
                 </label>
+                <div className="menu-item" style={{ display: admin }}>
+                    <NavLink className={navBarClassName} to="/admin">
+                        Admin
+                    </NavLink>
+                </div>
                 <MenuItem link="/home" linkName="Trang chủ" />
                 <MenuItem link="/introduction" linkName="Giới thiệu" />
                 <MenuItem link="/exercise" linkName="Học tập" />
