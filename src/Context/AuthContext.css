@@ -1,12 +1,18 @@
 .authMessage {
   color: white;
   height: 89.999vh;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.authMessage > div {
+  text-align: center;
+  width: 90%;
+  margin: 10px;
 }
 
 .goToLoginBtn {
@@ -15,7 +21,32 @@
   border: 1px solid black;
   border-radius: 8px;
   text-align: center;
-  margin: 10px auto 50px auto;
+  margin: 10px auto 0px auto;
   font-family: Montserrat Reg;
   font-size: 22px;
+}
+
+/*Tablet: width >= 768px and width < 1024px*/
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .authMessage {
+    font-size: 30px;
+  }
+  
+  .goToLoginBtn {
+    padding: 8px;
+    font-size: 18px;
+  }
+}
+
+/* Mobile: width < 768px */
+@media only screen and (max-width: 768px) {
+  .authMessage {
+    font-size: 24px;
+  }
+  
+  .goToLoginBtn {
+    padding: 8px;
+    font-size: 16px;
+  }
+  
 }

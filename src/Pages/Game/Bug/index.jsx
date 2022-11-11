@@ -39,8 +39,6 @@ const Bug = () => {
                 <p className="text22"> Trong lúc code, chắc chắn các bạn sẽ gặp những chú bọ rất "đáng yêu".
                     <br />CHÚNG PHÁ CHƯƠNG TRÌNH CỦA BẠN. HÃY NÉM NGỌN LỬA VÀO CHÚNG NÀOOOOOO!!!
                 </p>
-                <p className="show-in-phone"> HÃY NÉM NHỮNG NGỌN LỬA VÀO CON BUG NÀOOOOOO!!!
-                </p>
                 <div id="gameScreen">
                     <GameArea id="gameArea" character="bug" style={bugSetup}>
                         <i style={{ color: "rgb(247, 102, 102)" }} className="fa-solid fa-bug"></i>

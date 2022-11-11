@@ -137,7 +137,7 @@ body {
 /* định nghĩa của các thẻ từ tiếng anh được kéo */
 .meaning {
     padding: 5px;
-    line-height: 170%;
+    line-height: 150%;
 }
 
 /* đếm ngược thời gian */
@@ -170,7 +170,7 @@ body {
     border-radius: 8px;
     margin: 10px;
     font-size: 30px;
-    background-color: #dab71b;
+    background-color: #F4BFBF;
     border-color: rgba(0, 0, 0, 0.603);
     color: black;
     transition-duration: 0.4s;
@@ -183,7 +183,7 @@ body {
 }
 
 #backToChoose:hover {
-    background-color: #db1f1f;
+    background-color: #fa7e7e;
     color: black;
     transform: translateY(8px);
     transition: ease-out;
@@ -200,7 +200,7 @@ body {
     border-radius: 8px;
     margin: 10px;
     font-size: 30px;
-    background-color: #B7E5DD;
+    background-color: #c6f9f0;
     border-color: rgba(0, 0, 0, 0.603);
     color: black;
     transition-duration: 0.4s;
@@ -213,7 +213,7 @@ body {
 }
 
 #nextStage:hover {
-    background-color: #F4BFBF;
+    background-color: #64f8dd;
     color: black;
     transform: translateY(8px);
     transition: ease-out;
@@ -302,6 +302,13 @@ body {
         margin-top: 10px;
     }
 
+    /* nút quay lại màn hình chọn trò chơi */
+    #backToChoose {
+        margin: 8px;
+        font-size: 22px;
+        padding: 5px 15px;
+    }
+
     /* nút chuyển màn chơi tiếp theo */
     #nextStage {
         margin: 8px;
@@ -347,7 +354,7 @@ body {
         width: 100vw;
         padding: 15px;
         z-index: 2;
-        margin-top: -190px;
+        margin-top: -400px;
         background-color: rgba(240, 248, 255, 0.415);
         /* line-height: 250%; */
     }
@@ -420,6 +427,12 @@ body {
     /* div chứa các button */
     .btn {
         margin-top: 10px;
+    }
+
+    #backToChoose {
+        margin: 8px;
+        font-size: 18px;
+        padding: 5px 10px;
     }
 
     /* nút chuyển màn chơi tiếp theo */
