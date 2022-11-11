@@ -26,7 +26,7 @@ const Game = ({ setDisplayGame, setWordNum, renderData, wordNum }) => {
               setWordNum(4);
             }}
           >
-            Back
+            <i class="fa-solid fa-angles-left"></i> Back
           </button>
           {/* TIÊU ĐỀ */}
           <h1 className="heading1">Kéo và thả - Drag and drop</h1>
@@ -48,7 +48,8 @@ const Game = ({ setDisplayGame, setWordNum, renderData, wordNum }) => {
             id="nextStage"
             style={{ display: continueBtn }}
             onClick={continueClick}
-          >Continue
+          >
+            Continue <i class="fa-solid fa-angles-right"></i>
           </button>
           {/* NÚT CHƠI lẠI */}
           <button
