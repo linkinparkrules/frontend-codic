@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom'
-
 const BackGround3 = () => {
   return (
     <div className="lets-contact">
@@ -12,9 +10,9 @@ const BackGround3 = () => {
           className="fa-brands fa-facebook-square fa-2x"></i></a>
         <a href="https://www.instagram.com/th.uyf/"><i
           className="fa-brands fa-instagram fa-2x"></i></a>
-        <Link to="mailto: dothuy20397@gmail.com" target="_blank"><i
-          className="fa-solid fa-envelope fa-2x"></i></Link>
-        <Link to="tel: 0942681628"><i className="fa-solid fa-phone fa-2x"></i></Link>
+        <a href="mailto: dothuy20397@gmail.com"><i
+          className="fa-solid fa-envelope fa-2x"></i></a>
+        <a href="tel: 1900561252"><i className="fa-solid fa-phone fa-2x"></i></a>
       </div>
     </div>
   );
