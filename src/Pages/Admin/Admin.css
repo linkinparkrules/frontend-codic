@@ -1,43 +1,65 @@
+.adminStyle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../../Asset/Background/Dic\ bgr/dic\ bgr\ 3.jpg');
+    background-size: cover;
+    height: 100%;
+}
+
+.adminStyle>h1 {
+    margin: 20px;
+}
+
 .feedback-admin {
+    color: black;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    width: 100%;
-    background-color: rgba(128, 128, 128, 0.377);
+    background-color: rgba(252, 236, 236, 0.742);
     border-left: 3px solid rgb(250, 73, 73);
+    width: 90%;
+    border-radius: 0 8px 8px 0;
+    margin: 5px;
 }
 
 .feedback-admin > h2 {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
-    padding: 10px;
+    padding: 5px 10px;
 }
 
 .feedback-admin > p {
-    padding: 10px;
+    padding: 5px 10px;
     font-size: 20px;
 }
 
 /*Tablet: width >= 768px and width < 1024px*/
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-    .feedback-admin > h2 {
-        font-size: 20px;
-    }
-    
-    .feedback-admin > p {
+    .feedback-admin>h2 {
         font-size: 18px;
+    }
+
+    .feedback-admin>p {
+        font-size: 16px;
     }
 }
 
 /* Mobile: width < 768px */
 @media only screen and (max-width: 768px) {
-    .feedback-admin > h2 {
-        font-size: 18px;
+
+    .adminStyle > h1 {
+        margin: 10px;
+        font-size: 24px;
+    }
+
+    .feedback-admin>h2 {
+        font-size: 16px;
         padding: 5px;
     }
-    
-    .feedback-admin > p {
+
+    .feedback-admin>p {
         padding: 5px;
-        font-size: 16px;
+        font-size: 14px;
     }
 }

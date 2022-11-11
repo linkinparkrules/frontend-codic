@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom'
-
 const BackGround3 = () => {
   return (
     <div className="lets-contact">
@@ -8,13 +6,13 @@ const BackGround3 = () => {
         Nhờ có vậy, chúng tôi có thể cải thiện không ngừng, đưa ra được những sản phẩm chất lượng nhất.</p>
       <p className="margin-bottom">Cảm ơn các bạn đã quan tâm</p>
       <div className="channel">
-        <Link to="https://www.facebook.com/thuydo.do.18" target="_blank"><i
-          className="fa-brands fa-facebook-square fa-2x"></i></Link>
-        <Link to="https://www.instagram.com/th.uyf/" target="_blank"><i
-          className="fa-brands fa-instagram fa-2x"></i></Link>
-        <Link to="mailto: dothuy20397@gmail.com" target="_blank"><i
-          className="fa-solid fa-envelope fa-2x"></i></Link>
-        <Link to="tel: 0942681628"><i className="fa-solid fa-phone fa-2x"></i></Link>
+        <a href="https://www.facebook.com/thuydo.do.18"><i
+          className="fa-brands fa-facebook-square fa-2x"></i></a>
+        <a href="https://www.instagram.com/th.uyf/"><i
+          className="fa-brands fa-instagram fa-2x"></i></a>
+        <a href="mailto: dothuy20397@gmail.com"><i
+          className="fa-solid fa-envelope fa-2x"></i></a>
+        <a href="tel: 1900561252"><i className="fa-solid fa-phone fa-2x"></i></a>
       </div>
     </div>
   );

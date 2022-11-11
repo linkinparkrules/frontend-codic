@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useRef, useCallback } from "react";
+import { useState, useEffect, useMemo } from "react";
 import "./DragDrop.css"
 import selection from '../../../Asset/Background/selection.jpg';
 import http from "../../../Utils/Axios";
@@ -12,8 +12,6 @@ const DragDrop = () => {
   const [displayGame, setDisplayGame] = useState(false);
   const [wordNum, setWordNum] = useState(4);
   const [typeGame, setTypeGame] = useState();
-  const firstShuffle = useRef([]);
-  const shuffleDrag = useRef([]);
   useEffect(() => {
     http.get("/exercise/element")
       .then((res) => {
@@ -32,17 +30,9 @@ const DragDrop = () => {
     if (!typeGame) {
       return [];
     } else {
-      firstShuffle.current = shuffle(data[typeGame]).slice(0, wordNum);
-      return firstShuffle.current;
+      return shuffle(data[typeGame]).slice(0, wordNum);
     }
   }, [data, typeGame, wordNum])
-
-  // console.log(firstShuffle.current);
-  shuffleDrag.current = useMemo(() => {
-    return shuffle(renderData);
-  },[renderData])
-  console.log(shuffleDrag.current);
-
 
   function showGame(type) {
     setDisplayGame(true);
@@ -73,7 +63,6 @@ const DragDrop = () => {
           setDisplayGame={setDisplayGame}
           setWordNum={setWordNum}
           renderData={renderData}
-          // shuffleDrag={shuffleDrag}
           wordNum={wordNum}
         />
       ) : (

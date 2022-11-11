@@ -12,6 +12,7 @@ import Bug from './Pages/Game/Bug';
 import DragDrop from './Pages/Game/Dragdrop';
 import Contact from './Pages/Contact';
 import NotFound from './NotFound';
+import Admin from './Pages/Admin';
 import BackToTop from './BackToTop'
 import UserContext from './Context';
 import { useEffect, useState } from 'react';
@@ -54,6 +55,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
+          <Route path='/admin' element={<Admin />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </UserContext.Provider>
