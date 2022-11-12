@@ -117,7 +117,47 @@
 
 /*Tablet: width >= 768px and width < 1024px*/
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .signup-form {
+        padding: 20px;
+        width: 80%;
+    }
     
+    .signup-content>img {
+        display: none;
+    }
+
+    #signup {
+        width: 60%;
+    }
+    
+    .signup-form>h2 {
+        font-size: 1.35em;
+        margin-bottom: 10px;
+        border-bottom: 3px solid orangered;
+        display: inline-block;
+        letter-spacing: 0px;
+    }
+    
+    .signup-input-form {
+        margin-bottom: 20px;
+    }
+    
+    .signup-input-form>p {
+        font-size: 16px;
+        letter-spacing: 0px;
+    }
+    
+    .signup-input-form>input {
+        padding: 10px 15px;
+        font-size: 16px;
+        letter-spacing: 0px;
+    }
+    
+    .signup-remember-info {
+        margin-bottom: 10px;
+        color: #607d8b;
+        font-size: 14px;
+    }
     
 }
     
