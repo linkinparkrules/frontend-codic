@@ -546,8 +546,9 @@
 }
 
 .footer-img>img {
-    width: 150px;
+    width: 120px;
     border-radius: 10px;
+    margin: 5px;
 }
 
 .contact-footer>p,
