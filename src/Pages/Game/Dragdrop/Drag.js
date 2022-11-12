@@ -8,8 +8,6 @@ const Drag = ({ value }) => {
     type: value._id,
     item: value,
     end: (item, monitor) => {
-      // console.log(JSON.stringify(item));
-      // console.log(monitor.didDrop());
       const dropResult = monitor.getDropResult();
       if (item && dropResult) {
         setDisplay("none");

@@ -39,23 +39,6 @@ const DragDrop = () => {
     setTypeGame(type)
   }
 
-  if (!data) {
-    return (
-      <div
-        className="dragdropLoading"
-        style={{
-          backgroundImage:
-            `linear-gradient(to bottom right, 
-              #${Math.floor(Math.random() * 16777215).toString(16)}, 
-              #${Math.floor(Math.random() * 16777215).toString(16)})`
-        }}>
-        <div>
-          {"Loading... (bạn chờ chút nhé <3)"}
-        </div>
-      </div>
-    );
-  };
-
   return (
     <AuthAccess mode="message">
       {displayGame ? (

@@ -10,6 +10,7 @@ const Game = ({ setDisplayGame, setWordNum, renderData, wordNum }) => {
     setWordNum((prev) => prev + 2)
     setCount(0);
     setContinueBtn("none");
+    setDisplayGame(false);
   }
 
   return (
@@ -26,7 +27,7 @@ const Game = ({ setDisplayGame, setWordNum, renderData, wordNum }) => {
               setWordNum(4);
             }}
           >
-            <i class="fa-solid fa-angles-left"></i> Back
+            <i className="fa-solid fa-angles-left"></i> Back
           </button>
           {/* TIÊU ĐỀ */}
           <h1 className="heading1">Kéo và thả - Drag and drop</h1>
@@ -49,7 +50,7 @@ const Game = ({ setDisplayGame, setWordNum, renderData, wordNum }) => {
             style={{ display: continueBtn }}
             onClick={continueClick}
           >
-            Continue <i class="fa-solid fa-angles-right"></i>
+            Continue <i className="fa-solid fa-angles-right"></i>
           </button>
           {/* NÚT CHƠI lẠI */}
           <button

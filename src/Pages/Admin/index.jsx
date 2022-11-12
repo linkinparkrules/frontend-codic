@@ -15,7 +15,7 @@ const Admin = () => {
                 console.log(err.message);
             })
     }, []);
-    console.log(data);
+    // console.log(data);
 
     return (
         <AdminAccess>

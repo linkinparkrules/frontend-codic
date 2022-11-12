@@ -9,7 +9,7 @@ const navBarClassName = (navBarStatus) => {
 };
 
 const NavBar = () => {
-    const [admin, setAdmin] = useState("none")
+    const [admin, setAdmin] = useState(false)
     const loginCtx = useContext(UserContext);
     let randomColor = Math.floor(Math.random() * 16777215).toString(16);
     let randomColor2 = Math.floor(Math.random() * 16777215).toString(16);
@@ -21,16 +21,17 @@ const NavBar = () => {
     }
 
     useEffect(() => {
-        console.log(loginCtx);
+        // console.log(loginCtx);
         // nếu có data thì mới chạy đk isAdmin kia để tránh lỗi
+        console.log('navbar', loginCtx.user)
         if (loginCtx.user) {
             if (loginCtx.user.isAdmin) {
-                console.log("block");
-                setAdmin("block");
+                // console.log("block");
+                setAdmin(true);
             }
         } else {
-            console.log("none");
-            setAdmin("none");
+            // console.log("none");
+            setAdmin(false);
         }
     }, [loginCtx])
 
@@ -46,11 +47,14 @@ const NavBar = () => {
             </div>
             {/* Navbar for desktop and pad */}
             <div className="menu">
-                <div className="menu-item" style={{ display: admin }}>
-                    <NavLink className={navBarClassName} to="/admin">
-                        Admin
-                    </NavLink>
-                </div>
+                {admin && (
+                     <div className="menu-item">
+                     <NavLink className={navBarClassName} to="/admin">
+                         Admin
+                     </NavLink>
+                 </div>
+                )}
+               
                 <MenuItem link="/home" linkName="Trang chủ" />
                 <MenuItem link="/introduction" linkName="Giới thiệu" />
                 <MenuItem link="/exercise" linkName="Học tập" />
@@ -100,11 +104,13 @@ const NavBar = () => {
                 <label htmlFor="nav-mobile-checkbox" className='nav-bar-close'>
                     <i className="fa-solid fa-xmark" />
                 </label>
-                <div className="menu-item" style={{ display: admin }}>
-                    <NavLink className={navBarClassName} to="/admin">
-                        Admin
-                    </NavLink>
-                </div>
+                {admin && (
+                     <div className="menu-item">
+                     <NavLink className={navBarClassName} to="/admin">
+                         Admin
+                     </NavLink>
+                 </div>
+                )}
                 <MenuItem link="/home" linkName="Trang chủ" />
                 <MenuItem link="/introduction" linkName="Giới thiệu" />
                 <MenuItem link="/exercise" linkName="Học tập" />
