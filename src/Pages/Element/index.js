@@ -14,7 +14,7 @@ const Element = () => {
                 console.log(err.message);
             })
     }, [])
-    
+
     // sử dụng useEffect + addEventListener để chạy event "nếu bấm ngoài nút button"
     useEffect(() => {
         function clickOutsideButton(event) {
@@ -32,12 +32,17 @@ const Element = () => {
     })
 
     if (!tag) {
-        return <div className="elementLoading" style={{ backgroundImage: `linear-gradient(to bottom right, #${Math.floor(Math.random() * 16777215).toString(16)}, #${Math.floor(Math.random() * 16777215).toString(16)})` }}>
-            <div>
-            Loading...
+        return (
+            <div
+                className="elementLoading"
+                style={{ backgroundImage: `linear-gradient(to bottom right, #${Math.floor(Math.random() * 16777215).toString(16)}, #${Math.floor(Math.random() * 16777215).toString(16)})` }}
+            >
+                <div>
+                    Loading...
+                </div>
             </div>
-        </div>
-    }
+        );
+    };
 
     function handleClick(event) {
         const prevId = document.getElementById(previousIdTarget.current);

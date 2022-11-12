@@ -20,6 +20,7 @@ const Login = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
+            // lấy dữ liệu và thêm token vào storage
             const response = await http.post('login', values);
             // console.log(response);
             if (values.rememberMe === true) {
@@ -28,6 +29,7 @@ const Login = () => {
                 sessionStorage.setItem("jwt", response.data.token);
             }
             // console.log(response.data)
+            // set dữ liệu user vào context
             http.get('/profile/me')
                 .then((response) => {
                     if (response.data) {
