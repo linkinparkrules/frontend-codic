@@ -5,8 +5,11 @@ import footerimg2 from "../../Asset/Background/footerimg2.jpg"
 import footerimg3 from "../../Asset/Background/footerimg3.jpg"
 import footerimg4 from "../../Asset/Background/footerimg5.jpg"
 import BackGround1 from '../Contact/BackGround1';
+import { useContext } from 'react';
+import UserContext from '../../Context';
 
 const BackGround8 = () => {
+    const loginCtx = useContext(UserContext);
     return (
         <div className="footer">
             <BackGround1 className="collect-feedback" placeholderMessage="Nhập ý kiến của bạn" >
@@ -17,8 +20,13 @@ const BackGround8 = () => {
                 <Link to="/introduction">Giới thiệu</Link>
                 <Link to="/exercise">Học tập</Link>
                 <Link to="/contact">Liên hệ</Link>
-                <Link to="/login">Đăng nhập</Link>
-                <Link to="/signup">Đăng ký</Link>
+                {!loginCtx.user && (
+                    <>
+                        <Link to="/login">Đăng nhập</Link>
+                        <Link to="/signup">Đăng ký</Link>
+                    </>
+                )}
+
             </div>
             <div className="footer-img">
                 <img src={footerimg1} alt="Người thành công" />
