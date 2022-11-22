@@ -1,4 +1,9 @@
-.adminStyle {
+.adminTools {
+    display: flex;
+}
+
+.feedbackTools {
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,7 +12,7 @@
     height: 100%;
 }
 
-.adminStyle>h1 {
+.feedbackTools>h2 {
     margin: 20px;
 }
 
@@ -48,7 +53,7 @@
 /* Mobile: width < 768px */
 @media only screen and (max-width: 768px) {
 
-    .adminStyle > h1 {
+    .feedbackTools>h2 {
         margin: 10px;
         font-size: 24px;
     }

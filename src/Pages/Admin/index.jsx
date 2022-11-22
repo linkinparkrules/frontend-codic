@@ -3,6 +3,7 @@ import AdminAccess from '../../Context/AdminContext';
 import "./Admin.css"
 import http from '../../Utils/Axios';
 import { useEffect, useState } from 'react';
+import ElementTool from './elementTool';
 
 const Admin = () => {
     const [data, setData] = useState([]);
@@ -19,12 +20,16 @@ const Admin = () => {
 
     return (
         <AdminAccess>
-            <div className='adminStyle'>
-                <h1>LỜI NHẮN VÀ GÓP Ý</h1>
-                {data.map((info) => {
-                    return <Numbers className="feedback-admin" key={info._id} h2={info.email} p={info.feedback} />
-                })}
+            <div className='adminTools'>
+                <div className='feedbackTools'>
+                    <h2>LỜI NHẮN VÀ GÓP Ý</h2>
+                    {data.map((info) => {
+                        return <Numbers className="feedback-admin" key={info._id} h2={info.email} p={info.feedback} />
+                    })}
+                </div>
+                <ElementTool />
             </div>
+
         </AdminAccess>
     )
 }
