@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const http = axios.create({
-    baseURL: "https://codic-mindx.herokuapp.com/"
-    // baseURL: "https://localhost:5001/"
+    // baseURL: "https://codic-mindx.herokuapp.com/"
+    baseURL: "https://localhost:5001/"
 });
 
 // this code runs before you send request to baseURL
