@@ -40,7 +40,7 @@ const DragDrop = () => {
   }
 
   return (
-    <AuthAccess mode="message">
+    <div>
       {displayGame ? (
         <Game
           setDisplayGame={setDisplayGame}
@@ -62,7 +62,7 @@ const DragDrop = () => {
           <img src={selection} alt="Ảnh trò chơi" />
         </div>
       )}
-    </AuthAccess>
+    </div>
   );
 };
 

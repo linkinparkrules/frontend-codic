@@ -33,7 +33,8 @@ const Bug = () => {
     }
 
     return (
-        <AuthAccess mode="message">
+        // <AuthAccess mode="message">
+        <div>
             <div className="gameContainer">
                 <h1 className="heading">DA GAME: THIS BUG IS ON FIREEEEEEE</h1>
                 <p className="text22"> Trong lúc code, chắc chắn các bạn sẽ gặp những chú bọ rất "đáng yêu".
@@ -57,7 +58,8 @@ const Bug = () => {
                     <TextArea fireSetup={setFireSetup} newStageBugSetup={changeBugSetup} bugSetting={bugSetup} />
                 </div>
             </div>
-        </AuthAccess>
+        {/* </AuthAccess> */}
+        </div>
     );
 };
 
